@@ -1,0 +1,12 @@
+.list {
+  margin-top: 21px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link {
+  color: #ffffff;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.25);
+}

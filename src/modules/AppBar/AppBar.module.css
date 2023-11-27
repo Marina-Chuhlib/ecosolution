@@ -1,0 +1,24 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 24px 100px;
+
+  border: 1px solid red;
+}
+
+.logoContainer {
+  cursor: pointer;
+}
+
+.btnContainer {
+  display: flex;
+  border: 1px solid red;
+}
