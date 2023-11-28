@@ -1,6 +1,6 @@
 :root {
-  --primary-font: "Fira Sans", sans-serif;
-  --secondary-font: "Oswald", sans-serif;
+  --primary-font: "Fira Sans";
+  --secondary-font: "Oswald";
 }
 
 body {
@@ -13,6 +13,7 @@ body {
 
   background-color: #f3f5fa;
   font-family: var(--primary-font);
+  box-sizing: content-box;
 }
 
 code {
@@ -31,6 +32,45 @@ ul {
   padding: 0;
 }
 a {
-  display: inline-block;
+  display: block;
   text-decoration: none;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--secondary-font);
+  font-weight: 400;
+}
+address {
+  font-style: normal;
+}
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    padding-left: 100px;
+    padding-right: 100px;
+    max-width: 1280px;
+  }
 }

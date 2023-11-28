@@ -2,15 +2,21 @@
   padding: 10px 16px;
   border: none;
   display: flex;
-
+  margin-left: 12px;
   align-items: center;
   justify-content: center;
-  border-radius: 50px;
+  border-radius: 500px;
   font-size: 16px;
+  padding: 10px 16px;
+  gap: 12px;
   background-color: #97d28b;
   color: #173d33;
-  /* width: 140px; */
-  width: fit-content;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.04em;
+
+  width: 140px;
   height: 39px;
   font-family: var(--primary-font);
 }

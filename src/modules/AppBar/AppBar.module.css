@@ -1,24 +1,60 @@
 .header {
+  box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1240px;
   justify-content: space-between;
   align-items: center;
+  padding: 36px 20px;
+  z-index: 1;
 
-  padding: 24px 100px;
+  background-color: #f3f5fa;
+}
 
-  border: 1px solid red;
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  background-color: inherit;
+  z-index: -1;
+}
+
+.header.scrolled {
+  background-color: #ffffff;
 }
 
 .logoContainer {
   cursor: pointer;
+  margin-right: 11px;
 }
 
 .btnContainer {
   display: flex;
-  border: 1px solid red;
+  border-radius: 50%;
+  height: 39px;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 36px 30px;
+  }
+  .logoContainer {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .header {
+    padding: 36px 20px;
+    height: 112px;
+  }
 }

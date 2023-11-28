@@ -14,18 +14,29 @@ const AppBar = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 767);
+      const updatedIsMobile = window.innerWidth <= 767;
+      setIsMobile(updatedIsMobile);
+      localStorage.setItem("isMobile", JSON.stringify(updatedIsMobile));
+    };
+
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 0;
+      setIsScrolled(scrolled);
     };
 
     handleResize();
+    handleScroll();
 
     window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("resize", handleResize);
+       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -39,7 +50,6 @@ const AppBar = () => {
 
   const openModal = () => {
     setModalOpen(true);
-    console.log("open");
   };
 
   const closeModal = () => {
@@ -47,7 +57,7 @@ const AppBar = () => {
   };
 
   return (
-    <header className={css.header}>
+    <header className={`${css.header} ${isScrolled ? css.scrolled : ""}`}>
       <div
         className={css.logoContainer}
         onMouseEnter={handleMouseEnter}

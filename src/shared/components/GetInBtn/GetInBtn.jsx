@@ -25,9 +25,9 @@ const GetInBtn = () => {
       >
         Get in touch
         {isHovered ? (
-          <Ellipse2 style={{ marginLeft: "12px" }} />
+          <Ellipse2  />
         ) : (
-          <Ellipse1 style={{ marginLeft: "12px" }} />
+          <Ellipse1  />
         )}
       </button>
     </>
