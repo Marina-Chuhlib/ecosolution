@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
-import { ReactComponent as Icon } from "../../images/arrow-right.svg";
-import { ReactComponent as FaceB } from "../../images/facebook.svg";
-import { ReactComponent as Inst } from "../../images/instagram.svg";
-import { ReactComponent as FaceBH } from "../../images/facebook-h.svg";
-import { ReactComponent as InstH } from "../../images/instagram-h.svg";
+import { ReactComponent as Icon } from "../../images/svg/arrow-right.svg";
+import { ReactComponent as FaceB } from "../../images/svg/facebook.svg";
+import { ReactComponent as Inst } from "../../images/svg/instagram.svg";
+import { ReactComponent as FaceBH } from "../../images/svg/facebook-h.svg";
+import { ReactComponent as InstH } from "../../images/svg/instagram-h.svg";
 
 import css from "./NavBar.module.css";
 
@@ -24,6 +24,32 @@ const NavBar = () => {
 
     return () => {
       window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    const links = document.querySelectorAll('a[href^="#"]');
+
+    const clickHandler = (e) => {
+      e.preventDefault();
+      const href = e.target.getAttribute("href");
+      const target = document.querySelector(href);
+      const offsetTop = target.offsetTop - 150;
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    };
+
+    links.forEach((link) => {
+      link.addEventListener("click", clickHandler);
+    });
+
+    return () => {
+      links.forEach((link) => {
+        link.removeEventListener("click", clickHandler);
+      });
     };
   }, []);
 
@@ -61,25 +87,19 @@ const NavBar = () => {
             </a>
           </li>
           <li className={css.item}>
-            <a href="#" className={css.link}>
+            <a href="#cases" className={css.link}>
               Cases
               <Icon className={css.icon} />
             </a>
           </li>
           <li className={css.item}>
-            <a href="#" className={css.link}>
+            <a href="#questions" className={css.link}>
               FAQ
               <Icon className={css.icon} />
             </a>
           </li>
           <li className={css.item}>
-            <a href="#" className={css.link}>
-              Customers
-              <Icon className={css.icon} />
-            </a>
-          </li>
-          <li className={css.item}>
-            <a href="#" className={css.link}>
+            <a href="#contact" className={css.link}>
               Contact Us
               <Icon className={css.icon} />
             </a>

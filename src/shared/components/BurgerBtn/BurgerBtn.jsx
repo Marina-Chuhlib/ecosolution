@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { ReactComponent as Menu } from "../../../images/menu.svg";
+import { ReactComponent as Menu } from "../../../images/svg/menu.svg";
 import Modal from "../Modal/Modal";
 
 import css from "./BurgerBtn.module.css";

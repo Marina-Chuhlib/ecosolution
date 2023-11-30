@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { ReactComponent as Ellipse1 } from "../../../images/ellipse1.svg";
-import { ReactComponent as Ellipse2 } from "../../../images/ellipse2.svg";
+import { ReactComponent as Ellipse1 } from "../../../images/svg/ellipse1.svg";
+import { ReactComponent as Ellipse2 } from "../../../images/svg/ellipse2.svg";
 
 import css from "./GetInBtn.module.css";
 

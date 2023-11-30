@@ -1,0 +1,67 @@
+.container {
+  margin-top: 36px;
+  position: relative;
+
+  border: 2px solid rgb(25, 88, 41);
+  height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 116px;
+}
+
+.title {
+  width: 319px;
+
+  font-size: 28px;
+  line-height: 28px;
+
+  text-transform: uppercase;
+
+  color: #173d33;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin-top: 100px;
+  }
+
+  .container::after {
+    content: "";
+    position: absolute;
+    background-color: #97d28b;
+    height: 65px;
+    width: 1px;
+    top: 0;
+    right: 50%;
+  }
+
+  .wrapper {
+    margin-bottom: 38px;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 36px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    margin-top: 120px;
+  }
+
+  .wrapper {
+    margin-bottom: 120px;
+  }
+
+  .title {
+    width: 398px;
+
+    font-size: 48px;
+    line-height: 48px;
+  }
+}

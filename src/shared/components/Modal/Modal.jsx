@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom";
 import { useEffect } from "react";
 
-import { ReactComponent as Close } from "../../../images/close.svg";
+import { ReactComponent as Close } from "../../../images/svg/close.svg";
 
 import css from "./Modal.module.css";
 
