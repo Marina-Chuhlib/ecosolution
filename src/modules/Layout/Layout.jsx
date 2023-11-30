@@ -1,5 +1,7 @@
 import AppBar from "../AppBar/AppBar";
 
+import { useRef } from "react";
+
 import Main from "../Main/Main";
 import About from "../About/About";
 import Electricity from "../Electricity/Electricity";
@@ -9,16 +11,27 @@ import Contact from "../Contact/Contact";
 import Footer from "../Footer/Footer";
 
 const Layout = () => {
+  const contactSectionRef = useRef(null);
+
+  function scrollToContactSection() {
+    if (contactSectionRef.current) {
+      contactSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }
+
   return (
     <>
-      <AppBar />
+      <AppBar scrollToContact={() => scrollToContactSection()} />
       <main className="container">
         <Main />
         <About />
         <Electricity />
         <Cases />
-        <Questions />
-        <Contact />
+        <Questions scrollToContact={() => scrollToContactSection()} />
+        <Contact contactSectionRef={contactSectionRef} />
       </main>
       <footer className="container">
         <Footer />

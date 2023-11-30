@@ -12,7 +12,7 @@ import { ReactComponent as Logo2 } from "../../images/svg/logo2.svg";
 import css from "./AppBar.module.css";
 import Modal from "../../shared/components/Modal/Modal";
 
-const AppBar = () => {
+const AppBar = ({ scrollToContact }) => {
   const [isHovered, setIsHovered] = useState(false);
   // const [isMobile, setIsMobile] = useState(false);
 
@@ -71,7 +71,9 @@ const AppBar = () => {
       </div>
       <div className={css.btnContainer}>
         <BurgerBtn propIsModalOpen={openModal} />
-        {!isMobile && <GetInBtn />}
+        {!isMobile && (
+          <GetInBtn onClick={scrollToContact}> Get in touch</GetInBtn>
+        )}
       </div>
       {isModalOpen && <Modal closeModal={closeModal} children={<NavBar />} />}
     </header>

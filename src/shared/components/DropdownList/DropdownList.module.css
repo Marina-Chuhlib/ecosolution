@@ -1,0 +1,46 @@
+.dropdownItem {
+  border-top: 1px solid #97d28b;
+  padding-top: 24px;
+  margin-bottom: 24px;
+}
+
+.titleWrapper {
+  display: flex;
+  gap: 24px;
+
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-family: "Fira Sans";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: justify;
+  letter-spacing: -0.04em;
+  color: #173d33;
+
+  width: 544px;
+}
+
+.content {
+  width: 544px;
+
+  font-size: 16px;
+  line-height: 19px;
+  text-align: justify;
+  letter-spacing: -0.04em;
+
+  color: #173d33;
+  margin-left: 52px;
+}
