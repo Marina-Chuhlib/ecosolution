@@ -1,19 +1,17 @@
 .dropdownItem {
   border-top: 1px solid #97d28b;
-  padding-top: 24px;
-  margin-bottom: 24px;
+  padding-top: 16px;
+  margin-bottom: 16px;
 }
 
 .titleWrapper {
   display: flex;
-  gap: 24px;
-
   align-items: center;
-
   margin-bottom: 24px;
 }
 
 .btn {
+  padding: 0;
   background-color: transparent;
   border: none;
   display: flex;
@@ -22,25 +20,68 @@
 }
 
 .title {
+  width: 296px;
   font-family: "Fira Sans";
   font-weight: 400;
-  font-size: 24px;
-  line-height: 29px;
-  text-align: justify;
+  font-size: 18px;
+  line-height: 22px;
   letter-spacing: -0.04em;
   color: #173d33;
-
-  width: 544px;
 }
 
 .content {
-  width: 544px;
+  width: 296px;
 
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 14px;
+  line-height: 17px;
   text-align: justify;
   letter-spacing: -0.04em;
-
   color: #173d33;
-  margin-left: 52px;
+
+  margin-left: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .titleWrapper {
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .title {
+    width: 298px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .content {
+    width: 298px;
+    font-size: 14px;
+    line-height: 17px;
+    margin-left: 44px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .dropdownItem {
+    border-top: 1px solid #97d28b;
+    padding-top: 24px;
+    margin-bottom: 24px;
+  }
+  .titleWrapper {
+    display: flex;
+    gap: 24px;
+
+    margin-bottom: 24px;
+  }
+  .title {
+    width: 544px;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .content {
+    width: 544px;
+    font-size: 16px;
+    line-height: 19px;
+    margin-left: 52px;
+  }
 }

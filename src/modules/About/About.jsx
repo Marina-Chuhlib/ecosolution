@@ -89,8 +89,10 @@ const About = () => {
           </li>
         </ul>
       </div> */}
+      {/* 
+    =====================  */}
 
-      <div className={css.gridListWrapper1}>
+      {/* <div className={css.gridListWrapper1}>
         <ul className={css.gridList1}>
           <li className={`${css.gridItem} ${css.colum}`}>
             <h3 className={css.caption}>
@@ -150,7 +152,7 @@ const About = () => {
             </p>
           </li>
         </ul>
-      </div>
+      </div> */}
     </section>
   );
 };

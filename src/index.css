@@ -25,7 +25,8 @@ code {
     monospace;
 }
 
-button {
+button,
+a {
   cursor: pointer;
   font-family: var(--primary-font);
 }

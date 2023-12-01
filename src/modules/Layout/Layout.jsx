@@ -1,6 +1,6 @@
 import AppBar from "../AppBar/AppBar";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 import Main from "../Main/Main";
 import About from "../About/About";

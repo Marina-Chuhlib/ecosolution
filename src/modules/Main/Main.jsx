@@ -19,7 +19,7 @@ const Main = () => {
             sources, generating power generation using energy wind, sun, water,
             biomass
           </p>
-          <LearnMoreBtn />
+          <LearnMoreBtn>Learn more</LearnMoreBtn>
         </div>
       </div>
       <div className={css.addressWrapper}>

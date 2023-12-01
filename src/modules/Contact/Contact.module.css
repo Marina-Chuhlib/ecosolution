@@ -1,3 +1,150 @@
 .container {
-  margin-top: 10000px;
+  border: 1px solid red;
+  margin-top: 36px;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #173d33;
+  margin-bottom: 24px;
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    width: 296px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.item {
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.04em;
+  color: #173d33;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #173d33;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  margin-top: 8px;
+}
+
+.link:hover .iconLink path {
+  stroke: #97d28b;
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  width: 244px;
+  gap: 8px;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 8px;
+  color: #173d33;
+}
+
+.text {
+  width: 212px;
+}
+
+.socialWrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.socialLink {
+  padding: 12px;
+  margin-top: 8px;
+}
+
+.iconSocial path {
+  stroke: #173d33;
+}
+
+.socialLink:hover .iconSocial path {
+  stroke: #97d28b;
+}
+
+.formContainer {
+  padding: 36px 12px;
+  background-color: #eaedf1;
+  width: 320px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin-top: 100px;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 36px;
+    margin-bottom: 40px;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .formContainer {
+    padding: 36px 24px;
+    width: 342px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    margin-top: 126px;
+  }
+
+  .formContainer {
+    padding: 48px;
+    width: 596px;
+  }
+
+  .title {
+    font-size: 48px;
+    line-height: 48px;
+    margin-bottom: 120px;
+  }
+
+  .link {
+    font-size: 24px;
+    line-height: 29px;
+
+    margin-top: 16px;
+  }
+
+  .item:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  .address {
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .text {
+    width: 434px;
+  }
+
+  .socialLink {
+    padding: 0;
+    margin-top: 16px;
+  }
 }

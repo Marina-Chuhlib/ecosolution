@@ -4,7 +4,7 @@ import { ReactComponent as Ellipse2 } from "../../../images/svg/ellipse2.svg";
 
 import css from "./GetInBtn.module.css";
 
-const GetInBtn = ({children,onClick}) => {
+const GetInBtn = ({ children, onClick, type = "button" }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleHover = () => {
@@ -18,18 +18,14 @@ const GetInBtn = ({children,onClick}) => {
   return (
     <>
       <button
-        type="button"
+        type={type}
         className={css.btn}
         onMouseEnter={handleHover}
         onMouseLeave={handleLeave}
         onClick={onClick}
       >
-      {children}
-        {isHovered ? (
-          <Ellipse2  />
-        ) : (
-          <Ellipse1  />
-        )}
+        {children}
+        {isHovered ? <Ellipse2 /> : <Ellipse1 />}
       </button>
     </>
   );

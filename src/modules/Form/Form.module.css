@@ -1,0 +1,141 @@
+.forma {
+  margin-top: 24px;
+  background-color: #eaedf1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #97d28b;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.04em;
+  color: #173d33;
+}
+
+.field:not(:last-child) {
+  margin-bottom: 28px;
+}
+
+.field .fieldValue:not(:placeholder-shown):invalid {
+  border-bottom: 2px solid #d28b8b;
+}
+
+.field.invalid {
+  /* Стили для поля, когда оно недопустимо */
+  border-bottom: 2px solid #d28b8b;
+}
+
+.fieldValue.invalidInput {
+  /* Стили для самого поля ввода, когда оно недопустимо */
+  background-color: transparent;
+  border: none;
+  /* Другие стили по вашему выбору */
+}
+
+.fieldValue {
+  background-color: transparent;
+  border: none;
+  margin-top: 8px;
+
+  font-size: 18px;
+  line-height: 22px;
+
+  letter-spacing: -0.04em;
+
+  color: #173d33;
+}
+
+.fieldValue:focus {
+  background-color: transparent;
+  outline: none;
+}
+
+.fieldValue::placeholder {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+
+  letter-spacing: -0.04em;
+
+  color: #173d33;
+}
+
+.errorMassage {
+  font-size: 12px;
+  line-height: 14px;
+  color: #d28b8b;
+  text-align: end;
+}
+
+.massage {
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.04em;
+  color: #173d33;
+  border-bottom: 1px solid #97d28b;
+}
+
+.massageText {
+  border: none;
+  background-color: transparent;
+
+  resize: none;
+  width: 100%;
+  height: 147px;
+  margin-top: 8px;
+
+  font-size: 18px;
+  line-height: 22px;
+
+  letter-spacing: -0.04em;
+
+  color: #173d33;
+}
+
+.btnWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-top: 16px;
+}
+
+.customBtn {
+  width: 99px;
+}
+
+@media screen and (min-width: 768px) {
+  .forma {
+    margin-top: 0;
+  }
+
+  .fieldValue::placeholder {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+
+    letter-spacing: -0.04em;
+
+    color: #bdbdbd;
+  }
+
+  .btnWrapper {
+    margin-top: 32px;
+  }
+
+  .massageText::placeholder {
+    font-size: 18px;
+    line-height: 22px;
+
+    letter-spacing: -0.04em;
+
+    color: #bdbdbd;
+  }
+}

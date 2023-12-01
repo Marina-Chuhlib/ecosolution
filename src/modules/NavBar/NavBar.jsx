@@ -9,6 +9,52 @@ import { ReactComponent as InstH } from "../../images/svg/instagram-h.svg";
 import css from "./NavBar.module.css";
 
 const NavBar = () => {
+  // const [activeLink, setActiveLink] = useState("");
+  // const [isHovered, setIsHovered] = useState(null);
+
+
+
+  // useEffect(() => {
+  //   const handleHashChange = () => {
+  //     const hash = window.location.hash.substr(1);
+  //     setActiveLink(hash);
+  //   };
+  // console.log(activeLink)
+  //   window.addEventListener("hashchange", handleHashChange);
+
+  //   handleHashChange();
+
+  //   return () => {
+  //     window.removeEventListener("hashchange", handleHashChange);
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   const links = document.querySelectorAll('a[href^="#"]');
+
+  //   const clickHandler = (e) => {
+  //     e.preventDefault();
+  //     const href = e.target.getAttribute("href");
+  //     const target = document.querySelector(href);
+  //     const offsetTop = target.offsetTop - 150;
+
+  //     window.scrollTo({
+  //       top: offsetTop,
+  //       behavior: "smooth",
+  //     });
+  //   };
+
+  //   links.forEach((link) => {
+  //     link.addEventListener("click", clickHandler);
+  //   });
+
+  //   return () => {
+  //     links.forEach((link) => {
+  //       link.removeEventListener("click", clickHandler);
+  //     });
+  //   };
+  // }, []);
+
   const [activeLink, setActiveLink] = useState("");
   const [isHovered, setIsHovered] = useState(null);
 
@@ -40,6 +86,9 @@ const NavBar = () => {
         top: offsetTop,
         behavior: "smooth",
       });
+
+      const hash = href.substr(1);
+      setActiveLink(hash);
     };
 
     links.forEach((link) => {
@@ -87,19 +136,19 @@ const NavBar = () => {
             </a>
           </li>
           <li className={css.item}>
-            <a href="#cases" className={css.link}>
+            <a href="#cases"  className={getLinkClassName("cases")}>
               Cases
               <Icon className={css.icon} />
             </a>
           </li>
           <li className={css.item}>
-            <a href="#questions" className={css.link}>
+            <a href="#questions" className={getLinkClassName("questions")}>
               FAQ
               <Icon className={css.icon} />
             </a>
           </li>
           <li className={css.item}>
-            <a href="#contact" className={css.link}>
+            <a href="#contact" className={getLinkClassName("contact")}>
               Contact Us
               <Icon className={css.icon} />
             </a>

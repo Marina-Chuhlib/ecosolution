@@ -1,14 +1,17 @@
-import { useState, useRef, useEffect } from "react";
-import Contact from "../Contact/Contact";
+import { useState, useContext, useEffect } from "react";
+
 import DropdownList from "../../shared/components/DropdownList/DropdownList";
 
 import GetInBtn from "../../shared/components/GetInBtn/GetInBtn";
 
 import css from "./Questions.module.css";
+import { ContextDevise } from "../../shared/components/Context/Context";
 
 const Questions = ({ scrollToContact }) => {
   const [openIndex, setOpenIndex] = useState(0);
-  // const contactSectionRef = useRef(null);
+  const { isMobile } = useContext(ContextDevise);
+
+  useEffect(() => {}, [isMobile]);
 
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? -1 : index);
@@ -60,30 +63,54 @@ const Questions = ({ scrollToContact }) => {
   return (
     <>
       <section id="questions" className={css.container}>
-        <div className={css.wrapper}>
-          <ul className={css.list}>
-            {questionsData.map((question, index) => (
-              <li key={index} className={css.item}>
-                <DropdownList
-                  title={question.title}
-                  isOpen={openIndex === index}
-                  toggleDropdown={() => handleToggle(index)}
-                >
-                  {question.content}
-                </DropdownList>
-              </li>
-            ))}
-          </ul>
-          <div className={css.titleWrapper}>
+        {isMobile && (
+          <>
             <h2 className={css.title}>Frequently Asked Questions</h2>
+            <ul className={css.list}>
+              {questionsData.map((question, index) => (
+                <li key={index} className={css.item}>
+                  <DropdownList
+                    title={question.title}
+                    isOpen={openIndex === index}
+                    toggleDropdown={() => handleToggle(index)}
+                  >
+                    {question.content}
+                  </DropdownList>
+                </li>
+              ))}
+            </ul>
             <div className={css.infoContainer}>
-              <p>Didn't find the answer to your question? </p>
+              <p className={css.answer}>Didn't find the answer to your question? </p>
               <GetInBtn onClick={scrollToContact}>Contact Us</GetInBtn>
             </div>
-          </div>
-        </div>
-      </section>
+          </>
+        )}
 
+        {!isMobile && (
+          <div className={css.wrapper}>
+            <ul className={css.list}>
+              {questionsData.map((question, index) => (
+                <li key={index} className={css.item}>
+                  <DropdownList
+                    title={question.title}
+                    isOpen={openIndex === index}
+                    toggleDropdown={() => handleToggle(index)}
+                  >
+                    {question.content}
+                  </DropdownList>
+                </li>
+              ))}
+            </ul>
+            <div className={css.titleWrapper}>
+              <h2 className={css.title}>Frequently Asked Questions</h2>
+              <div className={css.infoContainer}>
+                <p className={css.answer}>Didn't find the answer to your question? </p>
+                <GetInBtn onClick={scrollToContact}>Contact Us</GetInBtn>
+              </div>
+            </div>
+          </div>
+        )}
+      </section>
     </>
   );
 };
