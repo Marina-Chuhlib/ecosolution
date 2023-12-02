@@ -31,7 +31,7 @@ const Cases = () => {
           </li>
         </ul> */}
 
-        {/* <Slider /> */}
+        <Slider />
       </div>
     </section>
   );

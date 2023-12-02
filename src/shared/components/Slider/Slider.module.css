@@ -1,20 +1,31 @@
 .slider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .slider {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+
+    height: 318px;
+
+    position: relative;
+  }
+
+  .caption {
+    width: 357px;
+  }
 }
 
 .slide {
   background-color: #eaedf1;
   height: 318px;
-  width: 320px;
-  margin-bottom: 50px;
-
-  border: 1px solid red;
+  /* margin-bottom: 50px; */
 }
 
 .thumb {
+  height: 168px;
   max-height: 296px;
   width: 100%;
 }
@@ -26,25 +37,30 @@
 }
 
 .contentWrapper {
-  padding: 36px 48px;
+  padding: 12px;
+  height: 150px;
 }
 
 .list {
-  position: relative;
+  /* position: relative; */
   display: flex;
-
   flex-direction: column;
-  justify-content: space-between;
-  /* gap: 61px; */
 }
 
 .item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
-.list::after {
+.item:first-child {
+  height: 66px;
+}
+.item:not(:last-child) {
+  margin-bottom: 44px;
+}
+
+/* .list::after {
   position: absolute;
   content: "";
   background-color: #97d28b;
@@ -52,52 +68,52 @@
   height: 1px;
 
   top: 96px;
-}
+} */
 
 .btnContainer {
   position: absolute;
   display: flex;
   gap: 12px;
-  top: 68px;
+  top: 80px;
   right: 0;
 }
 
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.page {
+  position: absolute;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 34px;
+  color: #173d33;
+  top: 120px;
+
+  border: 1px solid red;
+}
+
+.desc {
+  color: rgba(23, 61, 51, 0.25);
+}
+
+.customBtn {
   border: 1px solid #173d33;
   background-color: transparent;
-
-  height: 66px;
-  width: 66px;
-
-  border-radius: 50px;
 }
 
-.btn:hover {
+.customBtn:hover {
   border: 1px solid #97d28b;
+  background-color: transparent;
 }
 
-.btn:hover .icon path {
+.customBtn:hover .icon path {
   stroke: #97d28b;
 }
 
-/* .itemBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background-color: #97d28b;
-  height: 60px;
-  width: 60px;
-
-  border-radius: 50px;
+.itemBtn {
+  /* margin-left: 40px; */
 }
 
 .itemBtn:hover {
   background-color: #173d33;
-} */
+}
 
 .itemIcon {
   transform: rotate(354deg);
@@ -124,15 +140,38 @@
   letter-spacing: -0.04em;
 
   color: #173d33;
+
+  /* Lviv Region, Radekhiv town Private Enterprise “ZAKHIDNYI BUH” */
+
+  width: 175px;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: justify;
+  letter-spacing: -0.04em;
+  color: #173d33;
 }
 
 .text {
   font-size: 16px;
   line-height: 19px;
   color: #173d33;
+
+  /* Wind Power for auto field irrigation */
+  font-size: 12px;
+  line-height: 14px;
+  text-align: justify;
+  letter-spacing: -0.04em;
+  color: #173d33;
 }
 
 @media screen and (min-width: 768px) {
+  .slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
   .btnContainer {
     top: 0;
     right: 0;
@@ -159,16 +198,23 @@
     height: 168px;
     width: 342px;
     overflow: hidden;
+    margin-bottom: 24px;
   }
 
   .contentWrapper {
-    padding: 24px 12px 12px;
-    height: 154px;
+    padding: 0 12px;
   }
+  .item:first-child {
+    height: 72px;
+  }
+  .item:not(:last-child) {
+    margin-bottom: 0;
+  }
+
   .caption {
     font-size: 20px;
     line-height: 24px;
-    max-width: 230px;
+    text-align: start;
   }
 
   .text {
@@ -177,9 +223,7 @@
   }
 
   .list {
-    gap: 26px;
-
-    border: 1px solid rgb(85, 0, 255);
+    gap: 30px;
   }
 
   .list::after {
@@ -189,8 +233,10 @@
     top: 96px;
   }
 
-  .itemBtn {
-    margin-left: 28px;
+  .page {
+    top: 0;
+    left: 50%;
+    top: 28px;
   }
 }
 

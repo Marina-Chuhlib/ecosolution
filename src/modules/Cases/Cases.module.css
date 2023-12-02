@@ -1,9 +1,9 @@
 .container {
   margin-top: 36px;
   position: relative;
-
+  height: fit-content;
   border: 2px solid rgb(25, 88, 41);
-  height: 100vh;
+  /* height: 490px; */
 }
 
 .wrapper {

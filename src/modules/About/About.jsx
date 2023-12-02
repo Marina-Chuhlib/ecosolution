@@ -11,6 +11,20 @@ import { ReactComponent as Icon4 } from "../../images/svg/ranking.svg";
 
 import css from "./About.module.css";
 
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
+
 const About = () => {
   const { isMobile } = useContext(ContextDevise);
   return (
@@ -151,7 +165,32 @@ const About = () => {
         </div>
       </div>
 
-      {/* ===== */}
+      {/* =====  grid !!!*/}
+      
+      {/* <Box display="grid" gridTemplateColumns="repeat(16, 1fr)" gap={2}>
+        <Box gridColumn="span 4">
+          <Item>xs=4</Item>
+        </Box>
+        <Box gridColumn="span 4">
+          <Item>xs=4</Item>
+        </Box>
+        <Box gridColumn="span 8">
+          <Item>xs=8</Item>
+        </Box>
+
+        <Box gridColumn="span 8">
+          <div className={css.gridItem}>
+            <img src={grid2} alt="" className={css.img} />
+          </div>
+        </Box>
+        <Box gridColumn="span 4">
+          <Item>xs=4</Item>
+        </Box>
+        <Box gridColumn="span 4">
+          <Item>xs=4</Item>
+        </Box>
+      </Box> */}
+      {/* ==== */}
 
       {/* <div className={css.gridListWrapper1}>
         <ul className={css.gridList1}>
