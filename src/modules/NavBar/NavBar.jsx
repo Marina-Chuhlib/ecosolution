@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import { useActiveSection } from "../../shared/components/Context/ActiveSectionContext";
+
 import { ReactComponent as Icon } from "../../images/svg/arrow-right.svg";
 import { ReactComponent as FaceB } from "../../images/svg/facebook.svg";
 import { ReactComponent as Inst } from "../../images/svg/instagram.svg";
@@ -9,51 +11,7 @@ import { ReactComponent as InstH } from "../../images/svg/instagram-h.svg";
 import css from "./NavBar.module.css";
 
 const NavBar = () => {
-  // const [activeLink, setActiveLink] = useState("");
-  // const [isHovered, setIsHovered] = useState(null);
-
-
-
-  // useEffect(() => {
-  //   const handleHashChange = () => {
-  //     const hash = window.location.hash.substr(1);
-  //     setActiveLink(hash);
-  //   };
-  // console.log(activeLink)
-  //   window.addEventListener("hashchange", handleHashChange);
-
-  //   handleHashChange();
-
-  //   return () => {
-  //     window.removeEventListener("hashchange", handleHashChange);
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   const links = document.querySelectorAll('a[href^="#"]');
-
-  //   const clickHandler = (e) => {
-  //     e.preventDefault();
-  //     const href = e.target.getAttribute("href");
-  //     const target = document.querySelector(href);
-  //     const offsetTop = target.offsetTop - 150;
-
-  //     window.scrollTo({
-  //       top: offsetTop,
-  //       behavior: "smooth",
-  //     });
-  //   };
-
-  //   links.forEach((link) => {
-  //     link.addEventListener("click", clickHandler);
-  //   });
-
-  //   return () => {
-  //     links.forEach((link) => {
-  //       link.removeEventListener("click", clickHandler);
-  //     });
-  //   };
-  // }, []);
+  const { activeSection } = useActiveSection();
 
   const [activeLink, setActiveLink] = useState("");
   const [isHovered, setIsHovered] = useState(null);
@@ -76,9 +34,9 @@ const NavBar = () => {
   useEffect(() => {
     const links = document.querySelectorAll('a[href^="#"]');
 
-    const clickHandler = (e) => {
+    const clickHandler = function (e) {
       e.preventDefault();
-      const href = e.target.getAttribute("href");
+      const href = this.getAttribute("href");
       const target = document.querySelector(href);
       const offsetTop = target.offsetTop - 150;
 
@@ -111,7 +69,7 @@ const NavBar = () => {
   };
 
   const getLinkClassName = (link) =>
-    `${css.link} ${activeLink === link ? css.active : ""}`;
+    `${css.link} ${activeSection === link ? css.active : ""}`;
 
   return (
     <div className={css.wrapper}>
@@ -136,7 +94,7 @@ const NavBar = () => {
             </a>
           </li>
           <li className={css.item}>
-            <a href="#cases"  className={getLinkClassName("cases")}>
+            <a href="#cases" className={getLinkClassName("cases")}>
               Cases
               <Icon className={css.icon} />
             </a>

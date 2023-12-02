@@ -1,1 +1,15 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #97d28b;
+  height: 60px;
+  width: 60px;
 
+  border-radius: 50px;
+}
+
+.btn:hover {
+  background-color: #173d33;
+}

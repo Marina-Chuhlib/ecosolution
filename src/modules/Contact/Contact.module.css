@@ -42,7 +42,8 @@
   margin-top: 8px;
 }
 
-.link:hover .iconLink path {
+.link:hover .iconLink path,
+.address:hover .iconLink path {
   stroke: #97d28b;
 }
 

@@ -14,7 +14,7 @@ const Contact = ({ contactSectionRef }) => {
     <section id="contact" ref={contactSectionRef} className={css.container}>
       <h2 className={css.title}>Contact us</h2>
       <div className={css.wrapper}>
-        <div className={css.contacts}>
+        <address className={css.contacts}>
           <ul className={css.list}>
             <li className={css.item}>
               Phone:
@@ -35,12 +35,19 @@ const Contact = ({ contactSectionRef }) => {
             </li>
             <li className={css.item}>
               Address:
-              <address className={css.address}>
-                <Map />
+              <a
+                className={css.address}
+                title="Google Maps"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://maps.app.goo.gl/sSrphhDReJyqCXAg6"
+              >
+                <Map className={css.iconLink} />
+
                 <span className={css.text}>
                   79005, Ukraine, Lviv, street. Shota Rustaveli, 7
                 </span>
-              </address>
+              </a>
             </li>
             <li className={css.item}>
               Social Networks:
@@ -54,7 +61,7 @@ const Contact = ({ contactSectionRef }) => {
               </div>
             </li>
           </ul>
-        </div>
+        </address>
 
         <div className={css.formContainer}>
           <Form />

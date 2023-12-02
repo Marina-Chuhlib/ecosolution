@@ -1,7 +1,5 @@
 .container {
   margin-top: 36px;
-
-  border: 2px solid rgb(25, 88, 41);
 }
 
 .title {
@@ -106,7 +104,7 @@
   }
 
   .counterWrapper {
-    margin-top: 120px;
+    margin-top: 128px;
   }
 
   .timer {

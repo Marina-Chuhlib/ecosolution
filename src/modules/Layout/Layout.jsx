@@ -1,6 +1,8 @@
 import AppBar from "../AppBar/AppBar";
 
-import { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+
+import { useActiveSection } from "../../shared/components/Context/ActiveSectionContext";
 
 import Main from "../Main/Main";
 import About from "../About/About";
@@ -13,14 +15,49 @@ import Footer from "../Footer/Footer";
 const Layout = () => {
   const contactSectionRef = useRef(null);
 
-  function scrollToContactSection() {
+  const scrollToContactSection = () => {
     if (contactSectionRef.current) {
-      contactSectionRef.current.scrollIntoView({
+      const offsetTop = contactSectionRef.current.offsetTop - 200;
+
+      window.scrollTo({
         behavior: "smooth",
-        block: "start",
+        top: offsetTop,
       });
     }
-  }
+  };
+
+  // =====
+
+  const { activeSection, setSection } = useActiveSection();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setSection(entry.target.id);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
+      }
+    );
+
+    const sections = document.querySelectorAll("section");
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, [setSection]);
 
   return (
     <>
@@ -31,10 +68,11 @@ const Layout = () => {
         <Electricity />
         <Cases />
         <Questions scrollToContact={() => scrollToContactSection()} />
+        <Questions />
         <Contact contactSectionRef={contactSectionRef} />
       </main>
       <footer className="container">
-        <Footer />
+        <Footer scrollToContact={() => scrollToContactSection()} />
       </footer>
     </>
   );

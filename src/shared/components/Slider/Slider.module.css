@@ -83,7 +83,7 @@
   stroke: #97d28b;
 }
 
-.itemBtn {
+/* .itemBtn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,7 +97,7 @@
 
 .itemBtn:hover {
   background-color: #173d33;
-}
+} */
 
 .itemIcon {
   transform: rotate(354deg);

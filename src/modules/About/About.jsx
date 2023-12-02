@@ -92,6 +92,67 @@ const About = () => {
       {/* 
     =====================  */}
 
+      <div className={css.gridList1}>
+        <div className={`${css.gridItem} ${css.colum}`}>
+          <h3 className={css.caption}>
+            <Icon1 /> Openness
+          </h3>
+          <p className={css.content}>
+            to the world, people, new ideas and projects
+          </p>
+        </div>
+        <div className={`${css.gridItem} ${css.colum}`}>
+          <h3 className={css.caption}>
+            <Icon2 />
+            Responsibility
+          </h3>
+
+          <p className={css.content}>
+            we are aware that the results of our work have an impact on our
+            lives and the lives of future generations
+          </p>
+        </div>
+        {!isMobile && (
+          <div className={css.gridItem}>
+            <img
+              src={grid1}
+              alt="People and wind generator"
+              className={css.img}
+            />
+          </div>
+        )}
+      </div>
+      <div className={css.gridListWrapper2}>
+        <div className={css.gridList2}>
+          {!isMobile && (
+            <div className={css.gridItem}>
+              <img src={grid2} alt="" className={css.img} />
+            </div>
+          )}
+          <div className={`${css.gridItem2} ${css.colum}`}>
+            <h3 className={css.caption}>
+              <Icon3 />
+              Innovation
+            </h3>
+            <p className={css.content}>
+              we use the latest technology to implement non-standard solutions
+            </p>
+          </div>
+          <div className={`${css.gridItem2} ${css.colum}`}>
+            <h3 className={css.caption}>
+              <Icon4 />
+              Quality
+            </h3>
+            <p className={css.content}>
+              we do not strive to be the first among others, but we want to be
+              the best in our business
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== */}
+
       {/* <div className={css.gridListWrapper1}>
         <ul className={css.gridList1}>
           <li className={`${css.gridItem} ${css.colum}`}>
