@@ -94,6 +94,10 @@
 @media screen and (min-width: 768px) {
   .container {
     margin-top: 264px;
+    max-width: 708px;
+
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .wrapper {
@@ -143,6 +147,10 @@
 }
 
 @media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+
   .addressLink {
     gap: 167px;
   }

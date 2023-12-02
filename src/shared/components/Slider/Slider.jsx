@@ -206,10 +206,27 @@ const Slider = () => {
           <SliderBtn className={css.icon} />
         </RoundBtn>
       </div>
-      <p className={css.page}>
-        {formatSlideNumber(currentIndex + 1)}
-        <span className={css.desc}>/{formatSlideNumber(slides.length)}</span>
-      </p>
+      {isMobile && (
+        <p className={css.page}>
+          {formatSlideNumber(currentIndex + 1)}
+          <span className={css.desc}>/{formatSlideNumber(slides.length)}</span>
+        </p>
+      )}
+{!isMobile && (
+  <p className={css.page}>
+    {currentIndex + 1 === slides.length ? (
+      <>
+        {formatSlideNumber(slides.length)}
+        <span className={css.desc}>/05</span>
+      </>
+    ) : (
+      <>
+        {formatSlideNumber(currentIndex + 2)}
+        <span className={css.desc}>/05</span>
+      </>
+    )}
+  </p>
+)}
     </div>
   );
 };
