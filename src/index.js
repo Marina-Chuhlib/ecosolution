@@ -3,13 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 
-import ContextProvider from "./shared/components/Context/Context";
+import DeviseContextProvider from "./shared/components/Context/DeviseContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ContextProvider>
+    <DeviseContextProvider>
       <App />
-    </ContextProvider>
+    </DeviseContextProvider>
   </React.StrictMode>
 );

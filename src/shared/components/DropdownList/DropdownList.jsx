@@ -1,17 +1,9 @@
-import { useState } from "react";
-
 import { ReactComponent as AddIcon } from "../../../images/svg/add.svg";
 import { ReactComponent as HideIcon } from "../../../images/svg/minus.svg";
 
 import css from "./DropdownList.module.css";
 
-const DropdownList = ({ title, children ,isOpen,toggleDropdown }) => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const toggleDropdown = () => {
-//     setIsOpen(!isOpen);
-//   };
-
+const DropdownList = ({ title, children, isOpen, toggleDropdown }) => {
   return (
     <div className={css.dropdownItem}>
       <div className={css.titleWrapper}>

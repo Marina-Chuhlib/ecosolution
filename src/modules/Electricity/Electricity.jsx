@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import css from "./Electricity.module.css";
 
 const Electricity = () => {
@@ -11,22 +11,19 @@ const Electricity = () => {
     : counterValue;
 
   const [currentNumber, setCurrentNumber] = useState(initialCounterValue);
+  const counterRef = useRef(null);
 
-  function formatNumber(number) {
+  const formatNumber = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-  }
+  };
 
   useEffect(() => {
-    function updateCounter() {
+    const updateCounter = () => {
       setCurrentNumber((prevNumber) => prevNumber + 1);
-
       const updatedNumber = currentNumber + 1;
-
-      document.getElementById("counter").textContent =
-        formatNumber(updatedNumber);
-
+      counterRef.current.textContent = formatNumber(updatedNumber);
       localStorage.setItem("counterValue", JSON.stringify(updatedNumber));
-    }
+    };
 
     const intervalId = setInterval(updateCounter, 1000);
 
@@ -37,7 +34,7 @@ const Electricity = () => {
     <section className={css.container} id="service">
       <h2 className={css.title}>Electricity we produced for all time</h2>
       <div className={css.counterWrapper}>
-        <h3 id="counter" className={css.timer}>
+        <h3 ref={counterRef} className={css.timer}>
           {formatNumber(currentNumber)}
         </h3>
         <span className={css.desc}>kWh</span>

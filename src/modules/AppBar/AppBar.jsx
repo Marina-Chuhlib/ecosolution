@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 
-import { ContextDevise } from "../../shared/components/Context/Context";
+import { ContextDevise } from "../../shared/components/Context/DeviseContext";
 
 import Modal from "../../shared/components/Modal/Modal";
 import BurgerBtn from "../../shared/components/BurgerBtn/BurgerBtn";

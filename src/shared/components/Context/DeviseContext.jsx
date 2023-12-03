@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from "react";
 
 export const ContextDevise = createContext();
 
-const ContextProvider = ({ children }) => {
+const DeviseContextProvider = ({ children }) => {
   const storedIsMobile = localStorage.getItem("isMobile");
   const initialIsMobile = storedIsMobile ? JSON.parse(storedIsMobile) : false;
 
@@ -30,4 +30,4 @@ const ContextProvider = ({ children }) => {
   );
 };
 
-export default ContextProvider;
+export default DeviseContextProvider;

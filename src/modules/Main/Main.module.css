@@ -40,12 +40,9 @@
 
 .text {
   font-size: 16px;
-
   text-align: justify;
-
   line-height: 19px;
   letter-spacing: -0.04em;
-  /* width: 363px; */
   color: #173d33;
   margin-bottom: 20px;
 }

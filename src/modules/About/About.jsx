@@ -2,7 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 
 import { useContext } from "react";
-import { ContextDevise } from "../../shared/components/Context/Context";
+import { ContextDevise } from "../../shared/components/Context/DeviseContext";
 
 import grid1 from "../../images/jpeg/grid1.jpeg";
 import grid2x from "../../images/jpeg/grid2x.jpeg";

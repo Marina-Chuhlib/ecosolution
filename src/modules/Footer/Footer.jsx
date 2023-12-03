@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { ContextDevise } from "../../shared/components/Context/Context";
+import { ContextDevise } from "../../shared/components/Context/DeviseContext";
 
 import css from "./Footer.module.css";
 

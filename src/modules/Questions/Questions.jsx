@@ -1,11 +1,11 @@
 import { useState, useContext, useEffect } from "react";
 
+import { ContextDevise } from "../../shared/components/Context/DeviseContext";
 import DropdownList from "../../shared/components/DropdownList/DropdownList";
 
 import GetInBtn from "../../shared/components/GetInBtn/GetInBtn";
 
 import css from "./Questions.module.css";
-import { ContextDevise } from "../../shared/components/Context/Context";
 
 const Questions = ({ scrollToContact }) => {
   const [openIndex, setOpenIndex] = useState(0);
@@ -16,16 +16,6 @@ const Questions = ({ scrollToContact }) => {
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? -1 : index);
   };
-
-  // const scrollToContactSection = () => {
-  //   console.log(contactSectionRef, "hello");
-  //   if (contactSectionRef) {
-  //     contactSectionRef.current.scrollIntoView({
-  //       behavior: "smooth",
-  //       block: "start",
-  //     });
-  //   }
-  // };
 
   const questionsData = [
     {
@@ -80,7 +70,9 @@ const Questions = ({ scrollToContact }) => {
               ))}
             </ul>
             <div className={css.infoContainer}>
-              <p className={css.answer}>Didn't find the answer to your question? </p>
+              <p className={css.answer}>
+                Didn't find the answer to your question?
+              </p>
               <GetInBtn onClick={scrollToContact}>Contact Us</GetInBtn>
             </div>
           </>
@@ -104,7 +96,9 @@ const Questions = ({ scrollToContact }) => {
             <div className={css.titleWrapper}>
               <h2 className={css.title}>Frequently Asked Questions</h2>
               <div className={css.infoContainer}>
-                <p className={css.answer}>Didn't find the answer to your question? </p>
+                <p className={css.answer}>
+                  Didn't find the answer to your question?
+                </p>
                 <GetInBtn onClick={scrollToContact}>Contact Us</GetInBtn>
               </div>
             </div>

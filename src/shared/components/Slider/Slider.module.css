@@ -1,6 +1,3 @@
-.sliderContainer {
-}
-
 .slider {
   position: relative;
 }
@@ -11,64 +8,11 @@
     margin-left: auto;
     margin-right: auto;
   }
-
-  .caption {
-    width: 357px;
-  }
 }
 
 .slide {
   background-color: #eaedf1;
   height: 318px;
-  /* margin-bottom: 50px; */
-}
-
-.thumb {
-  height: 168px;
-  max-height: 296px;
-  width: 100%;
-  width: auto;
-}
-
-.picture {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.contentWrapper {
-  padding: 12px;
-  height: 150px;
-}
-
-.list {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.item:first-child {
-  height: 66px;
-}
-.item:not(:last-child) {
-  margin-bottom: 44px;
-}
-
-.list::after {
-  position: absolute;
-  content: "";
-  background-color: #97d28b;
-  width: 296px;
-  width: 100%;
-  height: 1px;
-
-  top: 96px;
 }
 
 .btnContainer {
@@ -106,63 +50,6 @@
   stroke: #97d28b;
 }
 
-.itemBtn {
-  /* margin-left: 40px; */
-}
-
-.itemBtn:hover {
-  background-color: #173d33;
-}
-
-.itemIcon {
-  transform: rotate(354deg);
-  width: 28px;
-  height: 28px;
-}
-.itemIcon path {
-  stroke: #173d33;
-}
-
-.itemBtn:hover .itemIcon path {
-  stroke: #97d28b;
-}
-
-.caption {
-  width: 357px;
-
-  font-family: "Fira Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 29px;
-  /* text-align: justify; */
-  letter-spacing: -0.04em;
-
-  color: #173d33;
-
-  /* Lviv Region, Radekhiv town Private Enterprise “ZAKHIDNYI BUH” */
-
-  width: 175px;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: justify;
-  letter-spacing: -0.04em;
-  color: #173d33;
-}
-
-.text {
-  font-size: 16px;
-  line-height: 19px;
-  color: #173d33;
-
-  /* Wind Power for auto field irrigation */
-  font-size: 12px;
-  line-height: 14px;
-  text-align: justify;
-  letter-spacing: -0.04em;
-  color: #173d33;
-}
-
 @media screen and (min-width: 768px) {
   .slider {
     display: flex;
@@ -176,13 +63,10 @@
     right: 0;
     gap: 8px;
   }
+
   .btn {
     width: 66px;
     height: 66px;
-  }
-
-  .slideContent {
-    height: 322px;
   }
 
   .slide {
@@ -194,60 +78,8 @@
     margin-bottom: 0;
   }
 
-  .list::after {
-    position: absolute;
-    content: "";
-    background-color: #97d28b;
-    width: 500px;
-    height: 1px;
-
-    top: 96px;
-  }
-
   .page {
     font-size: 28px;
-  }
-  .thumb {
-    height: 168px;
-    width: 342px;
-    overflow: hidden;
-    margin-bottom: 24px;
-  }
-
-  .contentWrapper {
-    padding: 0 12px;
-  }
-  .item:first-child {
-    height: 72px;
-  }
-  .item:not(:last-child) {
-    margin-bottom: 0;
-  }
-
-  .caption {
-    font-size: 20px;
-    line-height: 24px;
-    text-align: start;
-  }
-
-  .text {
-    font-size: 14px;
-    line-height: 17px;
-  }
-
-  .list {
-    gap: 30px;
-  }
-
-  .list::after {
-    width: 318px;
-    height: 1px;
-
-    top: 96px;
-  }
-
-  .caption {
-    width: 75%;
   }
 
   .page {
@@ -267,6 +99,7 @@
     left: 68%;
     top: 60px;
   }
+
   .btn {
     height: 84px;
     width: 84px;
@@ -275,42 +108,5 @@
   .slide {
     width: 596px;
     height: 509px;
-  }
-
-  .thumb {
-    width: 596px;
-    height: 296px;
-    margin-bottom: 0;
-  }
-
-  .contentWrapper {
-    padding: 36px 48px;
-    height: 210px;
-  }
-
-  .list::after {
-    width: 500px;
-    height: 1px;
-
-    top: 96px;
-  }
-
-  .item {
-    align-items: start;
-  }
-
-  .item:not(:last-child) {
-    margin-bottom: 30px;
-  }
-
-  .caption {
-    font-size: 24px;
-    line-height: 29px;
-    width: 80%;
-    color: #173d33;
-  }
-  .text {
-    font-size: 16px;
-    line-height: 19px;
   }
 }

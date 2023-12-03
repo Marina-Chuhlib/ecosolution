@@ -1,6 +1,6 @@
-import AppBar from "../AppBar/AppBar";
+import React, { useEffect, useRef } from "react";
 
-import React, { useState, useEffect, useRef } from "react";
+import AppBar from "../AppBar/AppBar";
 
 import { useActiveSection } from "../../shared/components/Context/ActiveSectionContext";
 
@@ -14,6 +14,7 @@ import Footer from "../Footer/Footer";
 
 const Layout = () => {
   const contactSectionRef = useRef(null);
+  const { activeSection, setSection } = useActiveSection();
 
   const scrollToContactSection = () => {
     if (contactSectionRef.current) {
@@ -25,10 +26,6 @@ const Layout = () => {
       });
     }
   };
-
-  // =====
-
-  const { activeSection, setSection } = useActiveSection();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
