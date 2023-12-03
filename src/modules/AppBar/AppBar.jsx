@@ -64,7 +64,8 @@ const AppBar = ({ scrollToContact }) => {
       <div className={css.btnContainer}>
         <BurgerBtn propIsModalOpen={openModal} />
         {!isMobile && (
-          <GetInBtn onClick={scrollToContact}>Get in touch</GetInBtn>
+      <div className={css.getInBtn }>  <GetInBtn onClick={scrollToContact} >Get in touch</GetInBtn></div>
+        
         )}
       </div>
       {isModalOpen && <Modal closeModal={closeModal} children={<NavBar />} />}
