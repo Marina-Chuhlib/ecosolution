@@ -6,7 +6,7 @@ import mainImg2x from "../../images/jpeg/main2x.jpg";
 
 import css from "./Main.module.css";
 
-const Main = () => {
+const Main = ({ scrollToSection }) => {
   const { isMobile } = useContext(ContextDevise);
 
   return (
@@ -19,11 +19,14 @@ const Main = () => {
             sources, generating power generation using energy wind, sun, water,
             biomass
           </p>
-          <LearnMoreBtn>Learn more</LearnMoreBtn>
+
+          <LearnMoreBtn onClick={scrollToSection}>Learn more</LearnMoreBtn>
         </div>
       </div>
       <address className={css.addressWrapper}>
-        <p>79005, Ukraine, Lvivstreet. Shota Rustaveli, 7</p>
+        <p className={css.address}>
+          79005, Ukraine, Lvivstreet. Shota Rustaveli, 7
+        </p>
         <div className={css.addressLink}>
           <a href="mailto:office@ecosolution.com" className={css.link}>
             office@ecosolution.com

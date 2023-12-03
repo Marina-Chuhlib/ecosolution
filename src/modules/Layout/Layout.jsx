@@ -14,15 +14,27 @@ import Footer from "../Footer/Footer";
 
 const Layout = () => {
   const contactSectionRef = useRef(null);
+  const casesSectionRef = useRef(null);
   const { activeSection, setSection } = useActiveSection();
 
   const scrollToContactSection = () => {
     if (contactSectionRef.current) {
-      const offsetTop = contactSectionRef.current.offsetTop - 200;
+      const offsetTop = contactSectionRef.current.offsetTop - 140;
 
       window.scrollTo({
         behavior: "smooth",
         top: offsetTop,
+      });
+    }
+  };
+
+  const scrollToCasesSection = () => {
+    if (casesSectionRef.current) {
+      const offsetTop = casesSectionRef.current.offsetTop - 140;
+      window.scrollTo({
+        behavior: "smooth",
+        top: offsetTop,
+        block: "start",
       });
     }
   };
@@ -60,10 +72,10 @@ const Layout = () => {
     <>
       <AppBar scrollToContact={() => scrollToContactSection()} />
       <main className="container">
-        <Main />
+        <Main scrollToSection={() => scrollToCasesSection()} />
         <About />
         <Electricity />
-        <Cases />
+        <Cases casesSectionRef={casesSectionRef} />
         <Questions scrollToContact={() => scrollToContactSection()} />
         <Questions />
         <Contact contactSectionRef={contactSectionRef} />
