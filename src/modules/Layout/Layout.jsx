@@ -77,7 +77,6 @@ const Layout = () => {
         <Electricity />
         <Cases casesSectionRef={casesSectionRef} />
         <Questions scrollToContact={() => scrollToContactSection()} />
-        <Questions />
         <Contact contactSectionRef={contactSectionRef} />
       </main>
       <footer className="container">
