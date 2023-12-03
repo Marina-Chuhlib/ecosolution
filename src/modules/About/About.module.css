@@ -1,4 +1,16 @@
-.container {
+@media (max-width: 767px) {
+  .boxGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .title {
@@ -29,7 +41,7 @@
   gap: 24px;
 } */
 
-.gridListWrapper1 {
+/* .gridListWrapper1 {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -77,7 +89,7 @@
   height: 197px;
 
   padding: 12px;
-}
+} */
 
 .caption {
   display: flex;
@@ -89,9 +101,20 @@
 
   margin-bottom: 64px;
   margin-bottom: 46px;
+
+  font-weight: 400;
+
+  text-transform: uppercase;
+
+  color: #173d33;
 }
 
-.gridItem:not(:last-child):before {
+.boxGridItem {
+  border: 1px solid red;
+  position: relative;
+}
+
+.boxGridItem::before {
   content: "";
   position: absolute;
   height: 1px;
@@ -101,6 +124,7 @@
   top: 60px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 100;
 }
 
 .content {
@@ -122,28 +146,48 @@
 
 @media screen and (min-width: 768px) {
   .container {
+    margin-top: 100px;
     max-width: 708px;
 
     margin-left: auto;
     margin-right: auto;
   }
+
   .title {
     font-weight: 400;
     font-size: 36px;
     line-height: 36px;
     max-width: 230px;
+    margin-bottom: 0;
+  }
+
+  .text {
+    width: 342px;
+    margin-bottom: 0;
   }
 
   .contextWrapper {
     display: flex;
-    align-items: center;
     justify-content: space-between;
 
     margin-bottom: 100px;
   }
 
-  .text {
-    max-width: 342px;
+  .boxGrid {
+    gap: 24px;
+  }
+
+  .boxGridItem {
+    border: 1px solid rgb(51, 0, 255);
+    padding: 12px;
+    height: 197px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .boxGridItem::before {
+    top: 87px;
+    width: 135px;
   }
 
   .text::before {
@@ -152,11 +196,11 @@
     width: 1px;
     height: 110px;
     background-color: #97d28b;
-    left: -22px;
+    left: -11px;
     top: 4px;
   }
 
-  .gridList1 {
+  /* .gridList1 {
     display: grid;
     gap: 24px;
     height: 197px;
@@ -164,40 +208,26 @@
     grid-template-columns: 159px 159px 342px;
     grid-template-rows: 1fr 2fr;
     margin-bottom: 24px;
-  }
+  } */
 
-  .gridList2 {
+  /* .gridList2 {
     display: grid;
     gap: 24px;
     height: 197px;
 
     grid-template-columns: 342px 159px 159px;
     grid-template-rows: 1fr 2fr;
-  }
+  } */
 
-  .gridList1 .gridItem:last-child {
+  /* .gridList1 .gridItem:last-child {
     padding: 0;
   }
 
   .gridList2 .gridItem:first-child {
     padding: 0;
-  }
+  } */
 
-  /* .gridList {
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) 2fr;
-    grid-template-rows: auto;
-
-    grid-template-columns: 1fr 1fr 2fr;
-
-    gap: 24px;
-    height: 197px;
-  }
-
- */
-
-  .gridItem::before {
+  /* .gridItem::before {
     top: 85px;
     width: 135px;
   }
@@ -205,7 +235,7 @@
   .gridItem2::before {
     top: 85px;
     width: 135px;
-  }
+  } */
 
   .wrapper {
     height: 100%;
@@ -216,26 +246,28 @@
     display: block;
     object-fit: cover;
     height: 197px;
-    /* min-width: 342px; */
   }
 
-  .gridList:not(:last-child) {
+  /* .gridList:not(:last-child) {
     margin-bottom: 40px;
-  }
+  } */
 
   .caption {
-    font-size: 16px;
-    line-height: 17px;
-
+    justify-content: start;
     margin-bottom: 64px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .container {
+    margin-top: 120px;
     position: relative;
     max-width: 1280px;
   }
+
   .container::after {
     content: "";
 
@@ -247,39 +279,42 @@
     left: 50%;
   }
 
+  .boxGrid {
+    gap: 48px;
+  }
+
+  .contextWrapper {
+    margin-bottom: 124px;
+  }
+
   .title {
-    font-size: 36px;
-    max-width: 250px;
+    max-width: 365px;
+    font-size: 48px;
+    line-height: 48px;
   }
 
   .text {
-    max-width: 459px;
+    width: 459px;
+    font-size: 16px;
+    line-height: 19px;
   }
 
   .text::before {
     display: none;
   }
 
-  .contextWrapper {
-    margin-bottom: 122px;
+  .boxGridItem::before {
+    top: 190px;
+    width: 135px;
   }
 
   .caption {
-    font-size: 18px;
-
+    font-size: 32px;
+    line-height: 48px;
     margin-bottom: 119px;
   }
-  /* 
-  .caption::after {
-    content: "";
-    position: absolute;
-    height: 1px;
-    width: 135px;
 
-    top: 51px;
-  } */
-
-  .gridListWrapper1 {
+  /* .gridListWrapper1 {
     margin-bottom: 48px;
     height: 339px;
   }
@@ -307,9 +342,9 @@
   .gridItem2 {
     height: 339px;
     padding: 48px 24px;
-  }
+  } */
 
-  .gridItem:not(:last-child)::before {
+  /* .gridItem:not(:last-child)::before {
     content: "";
     position: absolute;
     height: 1px;
@@ -319,9 +354,9 @@
     top: 142px;
     left: 50%;
     transform: translateX(-50%);
-  }
+  } */
 
-  .gridItem2:not(:first-child)::before {
+  /* .gridItem2:not(:first-child)::before {
     content: "";
     position: absolute;
     height: 1px;
@@ -331,15 +366,15 @@
     top: 142px;
     left: 50%;
     transform: translateX(-50%);
-  }
+  } */
 
-  .gridList1 .gridItem:last-child {
+  /* .gridList1 .gridItem:last-child {
     padding: 0;
   }
 
   .gridList2 .gridItem:first-child {
     padding: 0;
-  }
+  } */
 
   .content {
     position: absolute;
@@ -350,6 +385,16 @@
     line-height: 19px;
     text-align: justify;
     letter-spacing: -0.04em;
+  }
+
+  .boxGridItem {
+    padding: 48px 24px;
+    height: 339px;
+  }
+
+  .boxGridItem::before {
+    top: 190px;
+    width: 226px;
   }
 
   .img {

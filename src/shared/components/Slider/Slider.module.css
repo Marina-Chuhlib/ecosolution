@@ -1,16 +1,15 @@
+.sliderContainer {
+}
+
 .slider {
   position: relative;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 767px) {
   .slider {
-    max-width: fit-content;
+    max-width: 480px;
     margin-left: auto;
     margin-right: auto;
-
-    /* height: 318px; */
-
-    position: relative;
   }
 
   .caption {

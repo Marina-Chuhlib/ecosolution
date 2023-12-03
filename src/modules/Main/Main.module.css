@@ -5,6 +5,14 @@
   max-width: 1280px;
 }
 
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .wrapper {
   position: relative;
 }
@@ -82,7 +90,6 @@
   max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 36px;
 }
 
 .mainImg {
@@ -93,7 +100,7 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    margin-top: 264px;
+    margin-top: 240px;
     max-width: 708px;
 
     margin-left: auto;
@@ -158,6 +165,5 @@
   .thumb {
     max-width: 1240px;
     height: 524px;
-    margin-bottom: 120px;
   }
 }

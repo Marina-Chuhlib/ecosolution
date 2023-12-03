@@ -4,6 +4,14 @@
   margin-top: 36px;
 }
 
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .title {
   width: 320px;
   font-size: 28px;

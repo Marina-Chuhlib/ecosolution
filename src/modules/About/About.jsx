@@ -12,21 +12,11 @@ import { ReactComponent as Icon4 } from "../../images/svg/ranking.svg";
 import css from "./About.module.css";
 
 import * as React from "react";
-import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
 
 const About = () => {
   const { isMobile } = useContext(ContextDevise);
+
   return (
     <section id="about" className={css.container}>
       <div className={css.contextWrapper}>
@@ -104,8 +94,8 @@ const About = () => {
         </ul>
       </div> */}
       {/* 
-    =====================  */}
-
+    =====================  ! */}
+      {/* 
       <div className={css.gridList1}>
         <div className={`${css.gridItem} ${css.colum}`}>
           <h3 className={css.caption}>
@@ -163,33 +153,85 @@ const About = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* =====  grid !!!*/}
-      
-      {/* <Box display="grid" gridTemplateColumns="repeat(16, 1fr)" gap={2}>
-        <Box gridColumn="span 4">
-          <Item>xs=4</Item>
-        </Box>
-        <Box gridColumn="span 4">
-          <Item>xs=4</Item>
-        </Box>
-        <Box gridColumn="span 8">
-          <Item>xs=8</Item>
-        </Box>
 
-        <Box gridColumn="span 8">
-          <div className={css.gridItem}>
-            <img src={grid2} alt="" className={css.img} />
+      <Box
+        display="grid"
+        gridTemplateColumns="repeat(16, 1fr)"
+        className={css.boxGrid}
+
+      
+      >
+        <Box gridColumn="span 4" className={css.boxGridItem}>
+          <div className={css.item}>
+            <h3 className={css.caption}>
+              <Icon1 /> Openness
+            </h3>
+            <p className={css.content}>
+              to the world, people, new ideas and projects
+            </p>
           </div>
         </Box>
-        <Box gridColumn="span 4">
-          <Item>xs=4</Item>
+        <Box gridColumn="span 4" className={css.boxGridItem}>
+          <div className={css.item}>
+            <h3 className={css.caption}>
+              <Icon2 />
+              Responsibility
+            </h3>
+
+            <p className={css.content}>
+              we are aware that the results of our work have an impact on our
+              lives and the lives of future generations
+            </p>
+          </div>
         </Box>
-        <Box gridColumn="span 4">
-          <Item>xs=4</Item>
+        {!isMobile && (
+          <Box gridColumn="span 8">
+            <div className={css.gridItem} style={{ padding: "0" }}>
+              <img
+                src={grid1}
+                alt="People and wind generator"
+                className={css.img}
+              />
+            </div>
+          </Box>
+        )}
+
+        {!isMobile && (
+          <Box gridColumn="span 8">
+            <div className={css.gridItem} style={{ padding: "0" }}>
+              <img src={grid2} alt="" className={css.img} />
+            </div>
+          </Box>
+        )}
+        <Box gridColumn="span 4" className={css.boxGridItem}>
+          <div className={css.item}>
+            <h3 className={css.caption}>
+              <Icon3 />
+              Innovation
+            </h3>
+            <p className={css.content}>
+              we use the latest technology to implement non-standard solutions
+            </p>
+          </div>
         </Box>
-      </Box> */}
+        <Box gridColumn="span 4" className={css.boxGridItem}>
+          <div className={css.item}>
+            <h3 className={css.caption}>
+              <Icon4 />
+              Quality
+            </h3>
+            <p className={css.content}>
+              we do not strive to be the first among others, but we want to be
+              the best in our business
+            </p>
+          </div>
+        </Box>
+      </Box>
+
+
       {/* ==== */}
 
       {/* <div className={css.gridListWrapper1}>

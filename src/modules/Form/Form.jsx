@@ -21,11 +21,14 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setIsValid({
-      name: true,
-      email: true,
-      phone: true,
-    });
+    setIsValid((prevIsValid) => ({
+      ...prevIsValid,
+      name: /^[a-zA-Z]+(?:[' -][a-zA-Z]+)*$/.test(formData.name),
+      email: /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/.test(
+        formData.email
+      ),
+      phone: /^[0-9]*$/.test(formData.phone),
+    }));
 
     if (!isValidForm()) {
       console.log("Form validation failed. Please correct errors.");
@@ -54,7 +57,10 @@ const Form = () => {
       case "name":
         setIsValid((prevIsValid) => ({
           ...prevIsValid,
-          [name]: /^[a-zA-Z]+(?:[' -][a-zA-Z]+)*$/.test(value),
+          [name]:
+            /^[a-zA-Zа-яА-Я]+(?:[' -][a-zA-Zа-яА-Я]+)*( [a-zA-Zа-яА-Я]+(?:[' -][a-zA-Zа-яА-Я]+)*){1}$/.test(
+              value
+            ),
         }));
         break;
       case "email":
@@ -87,6 +93,7 @@ const Form = () => {
           type="text"
           name="name"
           placeholder="John Rosie"
+          autoComplete="name"
           value={formData.name}
           required
           onChange={handleChange}
@@ -104,6 +111,7 @@ const Form = () => {
           name="email"
           value={formData.email}
           placeholder="johnrosie@gmail.com"
+          autoComplete="email"
           onChange={handleChange}
           required
         />
@@ -117,6 +125,7 @@ const Form = () => {
           type="tel"
           name="phone"
           placeholder="380961234567"
+          autoComplete="tel-country-code"
           value={formData.phone}
           minLength={8}
           onChange={handleChange}

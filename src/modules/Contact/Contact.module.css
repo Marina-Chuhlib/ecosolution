@@ -1,5 +1,4 @@
 .container {
-  border: 1px solid red;
   margin-top: 36px;
 }
 
@@ -12,9 +11,16 @@
   margin-bottom: 24px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 480px) {
   .wrapper {
     width: 296px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    width: 100%;
+    max-width: 480px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -83,7 +89,6 @@
 .formContainer {
   padding: 36px 12px;
   background-color: #eaedf1;
-  width: 320px;
 }
 
 @media screen and (min-width: 768px) {

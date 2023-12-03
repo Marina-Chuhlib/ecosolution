@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 
 import { ContextDevise } from "../../shared/components/Context/Context";
 
+import Modal from "../../shared/components/Modal/Modal";
 import BurgerBtn from "../../shared/components/BurgerBtn/BurgerBtn";
 import GetInBtn from "../../shared/components/GetInBtn/GetInBtn";
 import NavBar from "../NavBar/NavBar";
@@ -10,22 +11,23 @@ import { ReactComponent as Logo1 } from "../../images/svg/logo1.svg";
 import { ReactComponent as Logo2 } from "../../images/svg/logo2.svg";
 
 import css from "./AppBar.module.css";
-import Modal from "../../shared/components/Modal/Modal";
 
-const AppBar = ({ scrollToContact, activeSection }) => {
+const AppBar = ({ scrollToContact }) => {
   const [isHovered, setIsHovered] = useState(false);
-
   const { isMobile } = useContext(ContextDevise);
   const [isModalOpen, setModalOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY > 0;
-      setIsScrolled(scrolled);
-    };
+    let scrollTimer;
 
-    handleScroll();
+    const handleScroll = () => {
+      setIsScrolling(true);
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        setIsScrolling(false);
+      }, 100);
+    };
 
     window.addEventListener("scroll", handleScroll);
 
@@ -51,7 +53,7 @@ const AppBar = ({ scrollToContact, activeSection }) => {
   };
 
   return (
-    <header className={`${css.header} ${isScrolled ? css.scrolled : ""}`}>
+    <header className={`${css.header} ${isScrolling ? css.scrolled : ""}`}>
       <div
         className={css.logoContainer}
         onMouseEnter={handleMouseEnter}
@@ -62,7 +64,7 @@ const AppBar = ({ scrollToContact, activeSection }) => {
       <div className={css.btnContainer}>
         <BurgerBtn propIsModalOpen={openModal} />
         {!isMobile && (
-          <GetInBtn onClick={scrollToContact}> Get in touch</GetInBtn>
+          <GetInBtn onClick={scrollToContact}>Get in touch</GetInBtn>
         )}
       </div>
       {isModalOpen && <Modal closeModal={closeModal} children={<NavBar />} />}

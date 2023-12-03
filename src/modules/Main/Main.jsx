@@ -22,19 +22,18 @@ const Main = () => {
           <LearnMoreBtn>Learn more</LearnMoreBtn>
         </div>
       </div>
-      <div className={css.addressWrapper}>
-        <address>79005, Ukraine, Lvivstreet. Shota Rustaveli, 7</address>
+      <address className={css.addressWrapper}>
+        <p>79005, Ukraine, Lvivstreet. Shota Rustaveli, 7</p>
         <div className={css.addressLink}>
           <a href="mailto:office@ecosolution.com" className={css.link}>
             office@ecosolution.com
           </a>
           {!isMobile && <p>2023 &copy;ecosolution</p>}
         </div>
-      </div>
+      </address>
       <div className={css.thumb}>
         <picture>
           <source srcSet={`${mainImg} 1x, ${mainImg2x} 2x`} />
-
           <img
             src={mainImg}
             className={css.mainImg}
