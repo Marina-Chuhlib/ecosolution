@@ -24,18 +24,17 @@ const Footer = ({ scrollToContact }) => {
   };
   return (
     <div className={css.container}>
-      <div
-        className={css.logoContainer}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        {isHovered ? <Logo2 /> : <Logo1 />}
+      <div className={css.logoContainer}>
+        <a href="#" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          {isHovered ? <Logo2 /> : <Logo1 />}
+        </a>
+
         {!isMobile && (
           <div className={css.socialWrapper}>
-            <a href="" className={css.socialLink}>
+            <a href="#" className={css.socialLink}>
               <Fb className={css.iconSocial} />
             </a>
-            <a href="" className={css.socialLink}>
+            <a href="#" className={css.socialLink}>
               <Inst className={css.iconSocial} />
             </a>
           </div>

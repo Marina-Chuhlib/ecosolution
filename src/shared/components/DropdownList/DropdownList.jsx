@@ -8,7 +8,11 @@ const DropdownList = ({ title, children, isOpen, toggleDropdown }) => {
     <div className={css.dropdownItem}>
       <div className={css.titleWrapper}>
         <button type="button" className={css.btn} onClick={toggleDropdown}>
-          {isOpen ? <HideIcon /> : <AddIcon />}
+          {isOpen ? (
+            <HideIcon className={css.hideIcon} />
+          ) : (
+            <AddIcon className={css.showIcon} />
+          )}
         </button>
         <h3 className={css.title}>{title}</h3>
       </div>

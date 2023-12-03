@@ -27,15 +27,12 @@
 }
 
 .field.invalid {
-  /* Стили для поля, когда оно недопустимо */
   border-bottom: 2px solid #d28b8b;
 }
 
 .fieldValue.invalidInput {
-  /* Стили для самого поля ввода, когда оно недопустимо */
   background-color: transparent;
   border: none;
-  /* Другие стили по вашему выбору */
 }
 
 .fieldValue {

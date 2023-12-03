@@ -105,6 +105,7 @@
 
 .itemIcon path {
   stroke: #173d33;
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
 .itemBtn:hover .itemIcon path {

@@ -54,13 +54,13 @@ const AppBar = ({ scrollToContact }) => {
 
   return (
     <header className={`${css.header} ${isScrolling ? css.scrolled : ""}`}>
-      <div
+      <a href="#"
         className={css.logoContainer}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         {isHovered ? <Logo2 /> : <Logo1 />}
-      </div>
+      </a>
       <div className={css.btnContainer}>
         <BurgerBtn propIsModalOpen={openModal} />
         {!isMobile && (
