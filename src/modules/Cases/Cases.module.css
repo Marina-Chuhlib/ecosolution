@@ -14,18 +14,14 @@
 .wrapper {
   display: flex;
   justify-content: space-between;
-
   margin-bottom: 116px;
 }
 
 .title {
   width: 319px;
-
   font-size: 28px;
   line-height: 28px;
-
   text-transform: uppercase;
-
   color: #173d33;
 }
 
@@ -73,7 +69,6 @@
 
   .title {
     width: 398px;
-
     font-size: 48px;
     line-height: 48px;
   }

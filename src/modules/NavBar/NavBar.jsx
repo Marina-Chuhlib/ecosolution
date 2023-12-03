@@ -117,7 +117,7 @@ const NavBar = () => {
         <ul className={css.socialLinkList}>
           <li>
             <a
-              href=""
+              href="#contact"
               className={css.socialLink}
               onMouseEnter={() => handleMouseEnter(0)}
               onMouseLeave={handleMouseLeave}
@@ -131,7 +131,7 @@ const NavBar = () => {
           </li>
           <li>
             <a
-              href=""
+              href="#contact"
               className={css.socialLink}
               onMouseEnter={() => handleMouseEnter(1)}
               onMouseLeave={handleMouseLeave}

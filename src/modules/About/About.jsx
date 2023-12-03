@@ -1,8 +1,13 @@
+import * as React from "react";
+import Box from "@mui/material/Box";
+
 import { useContext } from "react";
 import { ContextDevise } from "../../shared/components/Context/Context";
 
 import grid1 from "../../images/jpeg/grid1.jpeg";
+import grid2x from "../../images/jpeg/grid2x.jpeg";
 import grid2 from "../../images/jpeg/grid.jpeg";
+import grid2_2x from "../../images/jpeg/grid1-2x.jpeg";
 
 import { ReactComponent as Icon1 } from "../../images/svg/maximize-circle.svg";
 import { ReactComponent as Icon2 } from "../../images/svg/global-edit.svg";
@@ -10,9 +15,6 @@ import { ReactComponent as Icon3 } from "../../images/svg/cpu-charge.svg";
 import { ReactComponent as Icon4 } from "../../images/svg/ranking.svg";
 
 import css from "./About.module.css";
-
-import * as React from "react";
-import Box from "@mui/material/Box";
 
 const About = () => {
   const { isMobile } = useContext(ContextDevise);
@@ -30,46 +32,37 @@ const About = () => {
         </p>
       </div>
 
-      {/* <div className={css.listWrapper}>
-        <ul className={css.gridList1}>
-          <li className={`${css.gridItem} ${css.colum}`}>
-        
+      {isMobile && (
+        <Box
+          display="grid"
+          gridTemplateColumns="repeat(2, 1fr)"
+          className={css.boxGrid}
+        >
+          <Box gridColumn="span 1" className={css.boxGridItem}>
+            <div className={css.item}>
               <h3 className={css.caption}>
                 <Icon1 /> Openness
               </h3>
               <p className={css.content}>
                 to the world, people, new ideas and projects
               </p>
-    
-          </li>
-          <li className={`${css.gridItem} ${css.colum}`}>
-   
+            </div>
+          </Box>
+          <Box gridColumn="span 1" className={css.boxGridItem}>
+            <div className={css.item}>
               <h3 className={css.caption}>
                 <Icon2 />
                 Responsibility
               </h3>
-
               <p className={css.content}>
                 we are aware that the results of our work have an impact on our
                 lives and the lives of future generations
               </p>
-     
-          </li>
-          {!isMobile && (
-            <li className={css.gridItem}>
-              <img src={grid1} alt="" className={css.img} />
-            </li>
-          )}
-        </ul>
+            </div>
+          </Box>
 
-        <ul className={css.gridList2}>
-          {!isMobile && (
-            <li className={css.gridItem}>
-              <img src={grid2} alt="" className={css.img} />
-            </li>
-          )}
-          <li className={`${css.gridItem} ${css.colum}`}>
-    
+          <Box gridColumn="span 1" className={css.boxGridItem}>
+            <div className={css.item}>
               <h3 className={css.caption}>
                 <Icon3 />
                 Innovation
@@ -77,10 +70,10 @@ const About = () => {
               <p className={css.content}>
                 we use the latest technology to implement non-standard solutions
               </p>
- 
-          </li>
-          <li className={`${css.gridItem} ${css.colum}`}>
-        
+            </div>
+          </Box>
+          <Box gridColumn="span 1" className={css.boxGridItem}>
+            <div className={css.item}>
               <h3 className={css.caption}>
                 <Icon4 />
                 Quality
@@ -89,212 +82,91 @@ const About = () => {
                 we do not strive to be the first among others, but we want to be
                 the best in our business
               </p>
-   
-          </li>
-        </ul>
-      </div> */}
-      {/* 
-    =====================  ! */}
-      {/* 
-      <div className={css.gridList1}>
-        <div className={`${css.gridItem} ${css.colum}`}>
-          <h3 className={css.caption}>
-            <Icon1 /> Openness
-          </h3>
-          <p className={css.content}>
-            to the world, people, new ideas and projects
-          </p>
-        </div>
-        <div className={`${css.gridItem} ${css.colum}`}>
-          <h3 className={css.caption}>
-            <Icon2 />
-            Responsibility
-          </h3>
-
-          <p className={css.content}>
-            we are aware that the results of our work have an impact on our
-            lives and the lives of future generations
-          </p>
-        </div>
-        {!isMobile && (
-          <div className={css.gridItem}>
-            <img
-              src={grid1}
-              alt="People and wind generator"
-              className={css.img}
-            />
-          </div>
-        )}
-      </div>
-      <div className={css.gridListWrapper2}>
-        <div className={css.gridList2}>
-          {!isMobile && (
-            <div className={css.gridItem}>
-              <img src={grid2} alt="" className={css.img} />
-            </div>
-          )}
-          <div className={`${css.gridItem2} ${css.colum}`}>
-            <h3 className={css.caption}>
-              <Icon3 />
-              Innovation
-            </h3>
-            <p className={css.content}>
-              we use the latest technology to implement non-standard solutions
-            </p>
-          </div>
-          <div className={`${css.gridItem2} ${css.colum}`}>
-            <h3 className={css.caption}>
-              <Icon4 />
-              Quality
-            </h3>
-            <p className={css.content}>
-              we do not strive to be the first among others, but we want to be
-              the best in our business
-            </p>
-          </div>
-        </div>
-      </div> */}
-
-      {/* =====  grid !!!*/}
-
-      <Box
-        display="grid"
-        gridTemplateColumns="repeat(16, 1fr)"
-        className={css.boxGrid}
-
-      
-      >
-        <Box gridColumn="span 4" className={css.boxGridItem}>
-          <div className={css.item}>
-            <h3 className={css.caption}>
-              <Icon1 /> Openness
-            </h3>
-            <p className={css.content}>
-              to the world, people, new ideas and projects
-            </p>
-          </div>
-        </Box>
-        <Box gridColumn="span 4" className={css.boxGridItem}>
-          <div className={css.item}>
-            <h3 className={css.caption}>
-              <Icon2 />
-              Responsibility
-            </h3>
-
-            <p className={css.content}>
-              we are aware that the results of our work have an impact on our
-              lives and the lives of future generations
-            </p>
-          </div>
-        </Box>
-        {!isMobile && (
-          <Box gridColumn="span 8">
-            <div className={css.gridItem} style={{ padding: "0" }}>
-              <img
-                src={grid1}
-                alt="People and wind generator"
-                className={css.img}
-              />
             </div>
           </Box>
-        )}
+        </Box>
+      )}
 
-        {!isMobile && (
-          <Box gridColumn="span 8">
-            <div className={css.gridItem} style={{ padding: "0" }}>
-              <img src={grid2} alt="" className={css.img} />
+      {!isMobile && (
+        <Box
+          display="grid"
+          gridTemplateColumns="repeat(16, 1fr)"
+          className={css.boxGrid}
+        >
+          <Box gridColumn="span 4" className={css.boxGridItem}>
+            <div className={css.item}>
+              <h3 className={css.caption}>
+                <Icon1 className={css.icon} /> Openness
+              </h3>
+              <p className={css.content}>
+                to the world, people, new ideas and projects
+              </p>
             </div>
           </Box>
-        )}
-        <Box gridColumn="span 4" className={css.boxGridItem}>
-          <div className={css.item}>
-            <h3 className={css.caption}>
-              <Icon3 />
-              Innovation
-            </h3>
-            <p className={css.content}>
-              we use the latest technology to implement non-standard solutions
-            </p>
-          </div>
+          <Box gridColumn="span 4" className={css.boxGridItem}>
+            <div className={css.item}>
+              <h3 className={css.caption}>
+                <Icon2 className={css.icon} />
+                Responsibility
+              </h3>
+              <p className={css.content}>
+                we are aware that the results of our work have an impact on our
+                lives and the lives of future generations
+              </p>
+            </div>
+          </Box>
+
+          <Box gridColumn="span 8">
+            <div className={css.gridItem} style={{ padding: "0" }}>
+              <picture>
+                <source srcSet={`${grid1} 1x, ${grid2x} 2x`} />
+                <img
+                  src={grid1}
+                  className={css.img}
+                  alt="People and wind generator"
+                />
+              </picture>
+            </div>
+          </Box>
+
+          <Box gridColumn="span 8">
+            <div className={css.gridItem} style={{ padding: "0" }}>
+              <picture>
+                <source srcSet={`${grid2} 1x, ${grid2_2x} 2x`} />
+                <img
+                  src={grid2}
+                  className={css.img}
+                  alt="Man and solar panels"
+                />
+              </picture>
+            </div>
+          </Box>
+
+          <Box gridColumn="span 4" className={css.boxGridItem}>
+            <div className={css.item}>
+              <h3 className={css.caption}>
+                <Icon3 className={css.icon} />
+                Innovation
+              </h3>
+              <p className={css.content}>
+                we use the latest technology to implement non-standard solutions
+              </p>
+            </div>
+          </Box>
+          <Box gridColumn="span 4" className={css.boxGridItem}>
+            <div className={css.item}>
+              <h3 className={css.caption}>
+                <Icon4 className={css.icon} />
+                Quality
+              </h3>
+              <p className={css.content}>
+                we do not strive to be the first among others, but we want to be
+                the best in our business
+              </p>
+            </div>
+          </Box>
         </Box>
-        <Box gridColumn="span 4" className={css.boxGridItem}>
-          <div className={css.item}>
-            <h3 className={css.caption}>
-              <Icon4 />
-              Quality
-            </h3>
-            <p className={css.content}>
-              we do not strive to be the first among others, but we want to be
-              the best in our business
-            </p>
-          </div>
-        </Box>
-      </Box>
-
-
-      {/* ==== */}
-
-      {/* <div className={css.gridListWrapper1}>
-        <ul className={css.gridList1}>
-          <li className={`${css.gridItem} ${css.colum}`}>
-            <h3 className={css.caption}>
-              <Icon1 /> Openness
-            </h3>
-            <p className={css.content}>
-              to the world, people, new ideas and projects
-            </p>
-          </li>
-          <li className={`${css.gridItem} ${css.colum}`}>
-            <h3 className={css.caption}>
-              <Icon2 />
-              Responsibility
-            </h3>
-
-            <p className={css.content}>
-              we are aware that the results of our work have an impact on our
-              lives and the lives of future generations
-            </p>
-          </li>
-          {!isMobile && (
-            <li className={css.gridItem}>
-              <img
-                src={grid1}
-                alt="People and wind generator"
-                className={css.img}
-              />
-            </li>
-          )}
-        </ul>
-      </div>
-
-      <div className={css.gridListWrapper2}>
-        <ul className={css.gridList2}>
-          {!isMobile && (
-            <li className={css.gridItem}>
-              <img src={grid2} alt="Man and solar panels" className={css.img} />
-            </li>
-          )}
-          <li className={`${css.gridItem} ${css.colum}`}>
-            <h3 className={css.caption}>
-              <Icon3 />
-              Innovation
-            </h3>
-            <p className={css.content}>
-              we use the latest technology to implement non-standard solutions
-            </p>
-          </li>
-          <li className={`${css.gridItem} ${css.colum}`}>
-            <h3 className={css.caption}>
-              <Icon4 />
-              Quality
-            </h3>
-            <p className={css.content}>
-              we do not strive to be the first among others, but we want to be
-              the best in our business
-            </p>
-          </li>
-        </ul>
-      </div> */}
+      )}
     </section>
   );
 };
