@@ -10,7 +10,7 @@ import { ReactComponent as InstH } from "../../images/svg/instagram-h.svg";
 
 import css from "./NavBar.module.css";
 
-const NavBar = () => {
+const NavBar = ({ closeModal }) => {
   const { activeSection } = useActiveSection();
 
   const [activeLink, setActiveLink] = useState("");
@@ -47,6 +47,8 @@ const NavBar = () => {
 
       const hash = href.substr(1);
       setActiveLink(hash);
+
+      closeModal();
     };
 
     links.forEach((link) => {
@@ -58,7 +60,7 @@ const NavBar = () => {
         link.removeEventListener("click", clickHandler);
       });
     };
-  }, []);
+  }, [closeModal]);
 
   const handleMouseEnter = (index) => {
     setIsHovered(index);

@@ -70,7 +70,12 @@ const AppBar = ({ scrollToContact }) => {
           </div>
         )}
       </div>
-      {isModalOpen && <Modal closeModal={closeModal} children={<NavBar />} />}
+      {isModalOpen && (
+        <Modal
+          closeModal={closeModal}
+          children={<NavBar closeModal={closeModal} />}
+        />
+      )}
     </header>
   );
 };
