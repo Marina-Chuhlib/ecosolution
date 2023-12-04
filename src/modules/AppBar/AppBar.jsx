@@ -3,8 +3,8 @@ import { useState, useEffect, useContext } from "react";
 import { ContextDevise } from "../../shared/components/Context/DeviseContext";
 
 import Modal from "../../shared/components/Modal/Modal";
-import BurgerBtn from "../../shared/components/BurgerBtn/BurgerBtn";
-import GetInBtn from "../../shared/components/GetInBtn/GetInBtn";
+import BurgerBtn from "../../shared/components/Buttons/BurgerBtn/BurgerBtn";
+import GetInBtn from "../../shared/components/Buttons/GetInBtn/GetInBtn";
 import NavBar from "../NavBar/NavBar";
 
 import { ReactComponent as Logo1 } from "../../images/svg/logo1.svg";

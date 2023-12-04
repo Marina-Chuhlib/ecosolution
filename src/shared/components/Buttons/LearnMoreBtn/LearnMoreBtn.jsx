@@ -1,4 +1,4 @@
-import { ReactComponent as LearnBtn } from "../../../images/svg/learnBtn.svg";
+import { ReactComponent as LearnBtn } from "../../../../images/svg/learnBtn.svg";
 
 import css from "./LearnMoreBtn.module.css";
 

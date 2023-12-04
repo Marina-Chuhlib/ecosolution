@@ -12,7 +12,7 @@
 
 .slide {
   background-color: #eaedf1;
-  height: 318px;
+  min-height: 318px;
 }
 
 .btnContainer {

@@ -1,19 +1,27 @@
-import css from "./slides.module.css";
-
-import RoundBtn from "../RoundBtn/RoundBtn";
+import RoundBtn from "../Buttons/RoundBtn/RoundBtn";
 import { ReactComponent as Btn } from "../../../images/svg/arrow-right.svg";
 import img1 from "../../../images/jpeg/img1.jpeg";
+import img1_2x from "../../../images/jpeg/img1-2x.jpeg";
 import img2 from "../../../images/jpeg/img2.jpeg";
+import img2_2x from "../../../images/jpeg/img2-2x.jpeg";
 import img3 from "../../../images/jpeg/img3.jpeg";
+import img3_2x from "../../../images/jpeg/img3-2x.jpeg";
 import img4 from "../../../images/jpeg/img4.jpeg";
+import img4_2x from "../../../images/jpeg/img4-2x.jpeg";
 import img5 from "../../../images/jpeg/img5.jpeg";
+import img5_2x from "../../../images/jpeg/img5-2x.jpeg";
+
+import css from "./slides.module.css";
 
 const slides = [
   {
     content: (
       <div className={css.slideContent}>
         <div className={css.thumb}>
-          <img src={img1} alt="Windmills" className={css.picture} />
+          <picture>
+            <source srcSet={`${img1} 1x, ${img1_2x} 2x`} />
+            <img src={img1} className={css.picture} alt="Windmills" />
+          </picture>
         </div>
         <div className={css.contentWrapper}>
           <ul className={css.list}>
@@ -38,7 +46,10 @@ const slides = [
     content: (
       <div className={css.slideContent}>
         <div className={css.thumb}>
-          <img src={img2} alt="Solar Panels" className={css.picture} />
+          <picture>
+            <source srcSet={`${img2} 1x, ${img2_2x} 2x`} />
+            <img src={img2} className={css.picture} alt="Solar Panels" />
+          </picture>
         </div>
         <div className={css.contentWrapper}>
           <ul className={css.list}>
@@ -63,7 +74,10 @@ const slides = [
     content: (
       <div className={css.slideContent}>
         <div className={css.thumb}>
-          <img src={img3} alt="Thermal modules" className={css.picture} />
+          <picture>
+            <source srcSet={`${img3} 1x, ${img3_2x} 2x`} />
+            <img src={img3} className={css.picture} alt="Thermal modules" />
+          </picture>
         </div>
         <div className={css.contentWrapper}>
           <ul className={css.list}>
@@ -88,7 +102,10 @@ const slides = [
     content: (
       <div className={css.slideContent}>
         <div className={css.thumb}>
-          <img src={img4} alt="" className={css.picture} />
+          <picture>
+            <source srcSet={`${img4} 1x, ${img4_2x} 2x`} />
+            <img src={img4} className={css.picture} alt="Kherson Windmills" />
+          </picture>
         </div>
         <div className={css.contentWrapper}>
           <ul className={css.list}>
@@ -113,7 +130,14 @@ const slides = [
     content: (
       <div className={css.slideContent}>
         <div className={css.thumb}>
-          <img src={img5} alt="Mini nuclear stations" className={css.picture} />
+          <picture>
+            <source srcSet={`${img5} 1x, ${img5_2x} 2x`} />
+            <img
+              src={img5}
+              className={css.picture}
+              alt="Mini nuclear stations"
+            />
+          </picture>
         </div>
         <div className={css.contentWrapper}>
           <ul className={css.list}>

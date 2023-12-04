@@ -3,7 +3,7 @@ import { useState, useContext, useEffect } from "react";
 import { ContextDevise } from "../../shared/components/Context/DeviseContext";
 import DropdownList from "../../shared/components/DropdownList/DropdownList";
 
-import GetInBtn from "../../shared/components/GetInBtn/GetInBtn";
+import GetInBtn from "../../shared/components/Buttons/GetInBtn/GetInBtn";
 
 import css from "./Questions.module.css";
 

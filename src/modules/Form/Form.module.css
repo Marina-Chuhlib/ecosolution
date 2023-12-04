@@ -23,11 +23,13 @@
 }
 
 .field .fieldValue:not(:placeholder-shown):invalid {
-  border-bottom: 2px solid #d28b8b;
+  border-bottom: none;
+  border-bottom: 1px solid #d28b8b;
 }
 
 .field.invalid {
-  border-bottom: 2px solid #d28b8b;
+  border-bottom: none;
+  border-bottom: 1px solid #d28b8b;
 }
 
 .fieldValue.invalidInput {
@@ -59,10 +61,8 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
-
   letter-spacing: -0.04em;
-
-  color: #173d33;
+  color: #bdbdbd;
 }
 
 .errorMassage {
@@ -74,6 +74,7 @@
 
 .massage {
   font-size: 16px;
+  font-style: normal;
   line-height: 19px;
   letter-spacing: -0.04em;
   color: #173d33;
@@ -83,18 +84,29 @@
 .massageText {
   border: none;
   background-color: transparent;
-
+  font-style: normal;
   resize: none;
   width: 100%;
   height: 147px;
   margin-top: 8px;
-
   font-size: 18px;
   line-height: 22px;
-
   letter-spacing: -0.04em;
-
   color: #173d33;
+}
+
+.massageText:focus {
+  background-color: transparent;
+  outline: none;
+}
+
+.massageText::placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.04em;
+  color: #bdbdbd;
 }
 
 .btnWrapper {

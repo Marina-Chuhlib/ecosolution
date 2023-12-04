@@ -3,7 +3,7 @@ import React, { useState, useContext, useRef } from "react";
 import { ContextDevise } from "../Context/DeviseContext";
 
 import { ReactComponent as SliderBtn } from "../../../images/svg/arrowR.svg";
-import RoundBtn from "../RoundBtn/RoundBtn";
+import RoundBtn from "../Buttons/RoundBtn/RoundBtn";
 
 import slides from "./slides";
 

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ContextDevise } from "../../shared/components/Context/DeviseContext";
-import LearnMoreBtn from "../../shared/components/LearnMoreBtn/LearnMoreBtn";
+import LearnMoreBtn from "../../shared/components/Buttons/LearnMoreBtn/LearnMoreBtn";
 import mainImg from "../../images/jpeg/main.jpg";
 import mainImg2x from "../../images/jpeg/main2x.jpg";
 

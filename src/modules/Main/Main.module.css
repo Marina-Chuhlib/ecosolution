@@ -82,11 +82,9 @@
 }
 
 .thumb {
-  max-height: 524px;
   height: auto;
   min-width: 319px;
   min-height: 200px;
-  height: 20vh;
   width: 100%;
   max-width: 1240px;
   margin-left: auto;

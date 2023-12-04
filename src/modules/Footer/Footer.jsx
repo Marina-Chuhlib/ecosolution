@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { ContextDevise } from "../../shared/components/Context/DeviseContext";
 
-import css from "./Footer.module.css";
+import RoundBtn from "../../shared/components/Buttons/RoundBtn/RoundBtn";
 
 import { ReactComponent as Logo1 } from "../../images/svg/logo1.svg";
 import { ReactComponent as Logo2 } from "../../images/svg/logo2.svg";
@@ -9,7 +9,7 @@ import { ReactComponent as BtnIcon } from "../../images/svg/arrowR.svg";
 import { ReactComponent as Fb } from "../../images/svg/facebook.svg";
 import { ReactComponent as Inst } from "../../images/svg/instagram.svg";
 
-import RoundBtn from "../../shared/components/RoundBtn/RoundBtn";
+import css from "./Footer.module.css";
 
 const Footer = ({ scrollToContact }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -25,7 +25,11 @@ const Footer = ({ scrollToContact }) => {
   return (
     <div className={css.container}>
       <div className={css.logoContainer}>
-        <a href="#" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <a
+          href="#"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           {isHovered ? <Logo2 /> : <Logo1 />}
         </a>
 
