@@ -12,7 +12,7 @@ import css from "./Slider.module.css";
 const Slider = () => {
   const { isMobile } = useContext(ContextDevise);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [startX, setStartX] = useState(null);
+  const startX = useRef(null);
   const sliderRef = useRef(null);
 
   const showSlide = (index) => {
@@ -26,7 +26,7 @@ const Slider = () => {
   };
 
   const handleNextSlide = () => {
-    showSlide(isMobile ? currentIndex + 1 : currentIndex + 2);
+    showSlide(isMobile ? currentIndex + 1 : currentIndex + (isMobile ? 1 : 2));
   };
 
   const handlePrevSlide = () => {
@@ -42,51 +42,52 @@ const Slider = () => {
   };
 
   const handleTouchStart = (e) => {
-    setStartX(e.touches[0].clientX);
+    startX.current = e.touches[0].clientX;
   };
 
   const handleTouchMove = (e) => {
-    if (!startX) return;
-    const x = e.touches[0].clientX - startX;
+    if (!startX.current) return;
+    const x = e.touches[0].clientX - startX.current;
     if (Math.abs(x) > 50) {
       if (x > 0) {
         handlePrevSlide();
       } else {
         handleNextSlide();
       }
-      setStartX(null);
+      startX.current = e.touches[0].clientX;
     }
   };
 
   const handleTouchEnd = () => {
-    setStartX(null);
+    startX.current = null;
   };
 
   const handleMouseDown = (e) => {
     e.preventDefault();
-    setStartX(e.clientX);
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
-  };
+    startX.current = e.clientX;
 
-  const handleMouseMove = (e) => {
-    const x = e.clientX - startX;
-    if (Math.abs(x) > 50) {
-      if (x > 0) {
-        handlePrevSlide();
-      } else {
-        handleNextSlide();
+    const handleMouseMove = (moveEvent) => {
+      const x = moveEvent.clientX - startX.current;
+
+      if (Math.abs(x) > 50) {
+        if (x > 0) {
+          handlePrevSlide();
+        } else {
+          handleNextSlide();
+        }
+
+        startX.current = moveEvent.clientX;
       }
-      setStartX(null);
+    };
+
+    const handleMouseUp = () => {
+      startX.current = null;
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
-    }
-  };
+    };
 
-  const handleMouseUp = () => {
-    setStartX(null);
-    document.removeEventListener("mousemove", handleMouseMove);
-    document.removeEventListener("mouseup", handleMouseUp);
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
   };
 
   const formatSlideNumber = (number) => {
