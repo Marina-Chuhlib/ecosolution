@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import PropTypes from "prop-types";
 
 const ActiveSectionContext = createContext();
 
@@ -14,6 +15,10 @@ export const ActiveSectionProvider = ({ children }) => {
       {children}
     </ActiveSectionContext.Provider>
   );
+};
+
+ActiveSectionProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export const useActiveSection = () => {

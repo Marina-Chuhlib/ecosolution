@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 import { useActiveSection } from "../../shared/components/Context/ActiveSectionContext";
 
@@ -149,6 +150,10 @@ const NavBar = ({ closeModal }) => {
       </div>
     </div>
   );
+};
+
+NavBar.propTypes = {
+  closeModal: PropTypes.func.isRequired,
 };
 
 export default NavBar;

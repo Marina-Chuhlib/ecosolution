@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import Slider from "../../shared/components/Slider/Slider";
 
 import css from "./Cases.module.css";
@@ -14,6 +16,13 @@ const Cases = ({ casesSectionRef }) => {
       </div>
     </section>
   );
+};
+
+Cases.propTypes = {
+  casesSectionRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
 };
 
 export default Cases;

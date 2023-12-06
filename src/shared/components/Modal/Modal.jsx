@@ -1,5 +1,6 @@
 import { createPortal } from "react-dom";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
+import PropTypes from "prop-types";
 
 import { ReactComponent as Close } from "../../../images/svg/close.svg";
 
@@ -8,17 +9,20 @@ import css from "./Modal.module.css";
 const modalRoot = document.querySelector("#modal-root");
 
 const Modal = ({ closeModal, children }) => {
-  const onCloseModal = ({ target, currentTarget, code }) => {
-    if (target === currentTarget || code === "Escape") {
-      closeModal();
-    }
-  };
+  const onCloseModal = useCallback(
+    ({ target, currentTarget, code }) => {
+      if (target === currentTarget || code === "Escape") {
+        closeModal();
+      }
+    },
+    [closeModal]
+  );
 
   useEffect(() => {
-    document.addEventListener("keydown", closeModal);
+    document.addEventListener("keydown", onCloseModal);
 
-    return () => document.removeEventListener("keydown", closeModal);
-  }, [closeModal]);
+    return () => document.removeEventListener("keydown", onCloseModal);
+  }, [onCloseModal]);
 
   return createPortal(
     <div className={css.overlay} onClick={onCloseModal}>
@@ -32,6 +36,11 @@ const Modal = ({ closeModal, children }) => {
     </div>,
     modalRoot
   );
+};
+
+Modal.propTypes = {
+  closeModal: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Modal;

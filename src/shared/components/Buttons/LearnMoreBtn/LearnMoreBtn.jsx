@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { ReactComponent as LearnBtn } from "../../../../images/svg/learnBtn.svg";
 
 import css from "./LearnMoreBtn.module.css";
@@ -15,9 +17,11 @@ const LearnMoreBtn = ({ children, type = "button", customStyles, onClick }) => {
   );
 };
 
-// YourComponent.propTypes = {
-//   children: PropTypes.node,
-//   customStyles: PropTypes.string,
-// };
+LearnMoreBtn.propTypes = {
+  children: PropTypes.node.isRequired,
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
+  customStyles: PropTypes.string,
+  onClick: PropTypes.func,
+};
 
 export default LearnMoreBtn;

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import { ReactComponent as AddIcon } from "../../../images/svg/add.svg";
 import { ReactComponent as HideIcon } from "../../../images/svg/minus.svg";
 
@@ -20,6 +22,13 @@ const DropdownList = ({ title, children, isOpen, toggleDropdown }) => {
       {isOpen && <p className={css.content}>{children}</p>}
     </div>
   );
+};
+
+DropdownList.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  toggleDropdown: PropTypes.func.isRequired,
 };
 
 export default DropdownList;

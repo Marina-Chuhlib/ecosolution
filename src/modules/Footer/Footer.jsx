@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import PropTypes from 'prop-types';
 import { ContextDevise } from "../../shared/components/Context/DeviseContext";
 
 import RoundBtn from "../../shared/components/Buttons/RoundBtn/RoundBtn";
@@ -79,6 +80,10 @@ const Footer = ({ scrollToContact }) => {
       </address>
     </div>
   );
+};
+
+Footer.propTypes = {
+  scrollToContact: PropTypes.func.isRequired,
 };
 
 export default Footer;

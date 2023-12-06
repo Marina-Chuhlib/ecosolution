@@ -1,5 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 
+import PropTypes from "prop-types";
+
 import { ContextDevise } from "../../shared/components/Context/DeviseContext";
 
 import Modal from "../../shared/components/Modal/Modal";
@@ -78,6 +80,10 @@ const AppBar = ({ scrollToContact }) => {
       )}
     </header>
   );
+};
+
+AppBar.propTypes = {
+  scrollToContact: PropTypes.func.isRequired,
 };
 
 export default AppBar;

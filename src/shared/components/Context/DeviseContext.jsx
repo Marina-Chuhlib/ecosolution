@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
+import PropTypes from 'prop-types';
 
 export const ContextDevise = createContext();
 
@@ -28,6 +29,10 @@ const DeviseContextProvider = ({ children }) => {
       {children}
     </ContextDevise.Provider>
   );
+};
+
+DeviseContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default DeviseContextProvider;

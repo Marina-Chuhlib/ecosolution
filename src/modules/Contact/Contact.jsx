@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import Form from "../Form/Form";
 
 import { ReactComponent as Mail } from "../../images/svg/sms.svg";
@@ -69,6 +71,13 @@ const Contact = ({ contactSectionRef }) => {
       </div>
     </section>
   );
+};
+
+Contact.propTypes = {
+  contactSectionRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
 };
 
 export default Contact;

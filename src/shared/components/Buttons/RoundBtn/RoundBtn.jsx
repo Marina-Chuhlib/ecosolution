@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import css from "./RoundBtn.module.css";
 
 const RoundBtn = ({ onClick, children, customStyles }) => {
@@ -9,6 +11,12 @@ const RoundBtn = ({ onClick, children, customStyles }) => {
       {children}
     </button>
   );
+};
+
+RoundBtn.propTypes = {
+  onClick: PropTypes.func,
+  children: PropTypes.node.isRequired,
+  customStyles: PropTypes.string,
 };
 
 export default RoundBtn;

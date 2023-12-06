@@ -1,4 +1,6 @@
 import { useContext } from "react";
+import PropTypes from "prop-types";
+
 import { ContextDevise } from "../../shared/components/Context/DeviseContext";
 import LearnMoreBtn from "../../shared/components/Buttons/LearnMoreBtn/LearnMoreBtn";
 import mainImg from "../../images/jpeg/main.jpg";
@@ -48,6 +50,10 @@ const Main = ({ scrollToSection }) => {
       </div>
     </section>
   );
+};
+
+Main.propTypes = {
+  scrollToSection: PropTypes.func.isRequired,
 };
 
 export default Main;
