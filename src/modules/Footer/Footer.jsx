@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { ContextDevise } from "../../shared/components/Context/DeviseContext";
 
 import RoundBtn from "../../shared/components/Buttons/RoundBtn/RoundBtn";
@@ -12,7 +12,7 @@ import { ReactComponent as Inst } from "../../images/svg/instagram.svg";
 
 import css from "./Footer.module.css";
 
-const Footer = ({ scrollToContact }) => {
+const Footer = ({ scrollToSection, mainSectionRef }) => {
   const [isHovered, setIsHovered] = useState(false);
   const { isMobile } = useContext(ContextDevise);
 
@@ -45,12 +45,26 @@ const Footer = ({ scrollToContact }) => {
           </div>
         )}
 
-        <RoundBtn customStyles={css.customBtn} onClick={scrollToContact}>
+        <a
+          href="#main"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection(mainSectionRef);
+          }}
+          className={css.customBtn}
+        >
           <BtnIcon
             style={{ transform: "rotate(270deg)" }}
             className={css.customBtnIcon}
           />
-        </RoundBtn>
+        </a>
+
+        {/* <RoundBtn customStyles={css.customBtn} onClick={scrollToSection}>
+          <BtnIcon
+            style={{ transform: "rotate(270deg)" }}
+            className={css.customBtnIcon}
+          />
+        </RoundBtn> */}
       </div>
 
       {isMobile && (
@@ -83,7 +97,7 @@ const Footer = ({ scrollToContact }) => {
 };
 
 Footer.propTypes = {
-  scrollToContact: PropTypes.func.isRequired,
+  scrollToSection: PropTypes.func.isRequired,
 };
 
 export default Footer;

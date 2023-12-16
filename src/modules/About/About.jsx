@@ -124,6 +124,7 @@ const About = () => {
                   src={grid1}
                   className={css.img}
                   alt="People and wind generator"
+                  loading="lazy"
                 />
               </picture>
             </div>
@@ -137,6 +138,7 @@ const About = () => {
                   src={grid2}
                   className={css.img}
                   alt="Man and solar panels"
+                  loading="lazy"
                 />
               </picture>
             </div>

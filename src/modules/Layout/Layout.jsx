@@ -15,26 +15,16 @@ import Footer from "../Footer/Footer";
 const Layout = () => {
   const contactSectionRef = useRef(null);
   const casesSectionRef = useRef(null);
+  const mainSectionRef = useRef(null);
   const { activeSection, setSection } = useActiveSection();
 
-  const scrollToContactSection = () => {
-    if (contactSectionRef.current) {
-      const offsetTop = contactSectionRef.current.offsetTop - 140;
+  const scrollToSection = (sectionRef) => {
+    if (sectionRef.current) {
+      const offsetTop = sectionRef.current.offsetTop - 140;
 
       window.scrollTo({
         behavior: "smooth",
         top: offsetTop,
-      });
-    }
-  };
-
-  const scrollToCasesSection = () => {
-    if (casesSectionRef.current) {
-      const offsetTop = casesSectionRef.current.offsetTop - 140;
-      window.scrollTo({
-        behavior: "smooth",
-        top: offsetTop,
-        block: "start",
       });
     }
   };
@@ -70,17 +60,20 @@ const Layout = () => {
 
   return (
     <>
-      <AppBar scrollToContact={() => scrollToContactSection()} />
+      <AppBar scrollToSection={() => scrollToSection(contactSectionRef)} />
       <main className="container">
-        <Main scrollToSection={() => scrollToCasesSection()} />
+        <Main
+          scrollToSection={() => scrollToSection(casesSectionRef)}
+          mainSectionRef={mainSectionRef}
+        />
         <About />
         <Electricity />
         <Cases casesSectionRef={casesSectionRef} />
-        <Questions scrollToContact={() => scrollToContactSection()} />
+        <Questions scrollToSection={() => scrollToSection(contactSectionRef)} />
         <Contact contactSectionRef={contactSectionRef} />
       </main>
       <footer className="container">
-        <Footer scrollToContact={() => scrollToContactSection()} />
+        <Footer scrollToSection={() => scrollToSection(mainSectionRef)} />
       </footer>
     </>
   );

@@ -20,7 +20,12 @@ const slides = [
         <div className={css.thumb}>
           <picture>
             <source srcSet={`${img1} 1x, ${img1_2x} 2x`} />
-            <img src={img1} className={css.picture} alt="Windmills" />
+            <img
+              src={img1}
+              className={css.picture}
+              alt="Windmills"
+              loading="lazy"
+            />
           </picture>
         </div>
         <div className={css.contentWrapper}>
@@ -48,7 +53,12 @@ const slides = [
         <div className={css.thumb}>
           <picture>
             <source srcSet={`${img2} 1x, ${img2_2x} 2x`} />
-            <img src={img2} className={css.picture} alt="Solar Panels" />
+            <img
+              src={img2}
+              className={css.picture}
+              alt="Solar Panels"
+              loading="lazy"
+            />
           </picture>
         </div>
         <div className={css.contentWrapper}>
@@ -76,7 +86,12 @@ const slides = [
         <div className={css.thumb}>
           <picture>
             <source srcSet={`${img3} 1x, ${img3_2x} 2x`} />
-            <img src={img3} className={css.picture} alt="Thermal modules" />
+            <img
+              src={img3}
+              className={css.picture}
+              alt="Thermal modules"
+              loading="lazy"
+            />
           </picture>
         </div>
         <div className={css.contentWrapper}>
@@ -104,7 +119,12 @@ const slides = [
         <div className={css.thumb}>
           <picture>
             <source srcSet={`${img4} 1x, ${img4_2x} 2x`} />
-            <img src={img4} className={css.picture} alt="Kherson Windmills" />
+            <img
+              src={img4}
+              className={css.picture}
+              alt="Kherson Windmills"
+              loading="lazy"
+            />
           </picture>
         </div>
         <div className={css.contentWrapper}>
@@ -136,6 +156,7 @@ const slides = [
               src={img5}
               className={css.picture}
               alt="Mini nuclear stations"
+              loading="lazy"
             />
           </picture>
         </div>

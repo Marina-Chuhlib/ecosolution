@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import css from "./RoundBtn.module.css";
 
-const RoundBtn = ({ onClick, children, customStyles }) => {
+const RoundBtn = ({onClick, children, customStyles }) => {
   const defaultStyles = css.btn;
 
   const combinedStyles = `${defaultStyles} ${customStyles || ""}`;

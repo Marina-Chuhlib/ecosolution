@@ -40,6 +40,7 @@
   text-transform: uppercase;
 
   color: #97d28b;
+  width: 256px;
 }
 
 .desc {
@@ -80,6 +81,7 @@
     font-weight: 700;
     font-size: 100px;
     line-height: 100px;
+    width: 533px;
   }
 
   .desc {
@@ -111,6 +113,7 @@
   .timer {
     font-size: 164px;
     line-height: 164px;
+    width: 874px;
   }
 
   .desc {

@@ -12,12 +12,32 @@
 }
 
 .customBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #97d28b;
+  height: 60px;
+  width: 60px;
+
+  border-radius: 50px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.customBtn:hover,
+.customBtn:focus {
+  background-color: #173d33;
+}
+
+.customBtn {
   width: 32px;
   height: 32px;
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
-.customBtn:hover path {
+.customBtn:hover path,
+.customBtn:focus path {
   stroke: #97d28b;
 }
 

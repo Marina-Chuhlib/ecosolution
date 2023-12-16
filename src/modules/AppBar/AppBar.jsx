@@ -14,7 +14,7 @@ import { ReactComponent as Logo2 } from "../../images/svg/logo2.svg";
 
 import css from "./AppBar.module.css";
 
-const AppBar = ({ scrollToContact }) => {
+const AppBar = ({ scrollToSection }) => {
   const [isHovered, setIsHovered] = useState(false);
   const { isMobile } = useContext(ContextDevise);
   const [isModalOpen, setModalOpen] = useState(false);
@@ -68,7 +68,7 @@ const AppBar = ({ scrollToContact }) => {
         <BurgerBtn propIsModalOpen={openModal} />
         {!isMobile && (
           <div className={css.getInBtn}>
-            <GetInBtn onClick={scrollToContact}>Get in touch</GetInBtn>
+            <GetInBtn onClick={scrollToSection}>Get in touch</GetInBtn>
           </div>
         )}
       </div>
@@ -83,7 +83,7 @@ const AppBar = ({ scrollToContact }) => {
 };
 
 AppBar.propTypes = {
-  scrollToContact: PropTypes.func.isRequired,
+  scrollToSection: PropTypes.func.isRequired,
 };
 
 export default AppBar;

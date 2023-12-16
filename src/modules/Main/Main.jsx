@@ -3,16 +3,16 @@ import PropTypes from "prop-types";
 
 import { ContextDevise } from "../../shared/components/Context/DeviseContext";
 import LearnMoreBtn from "../../shared/components/Buttons/LearnMoreBtn/LearnMoreBtn";
-import mainImg from "../../images/jpeg/main.jpg";
+import mainImg from "../../images/jpeg/main.jpeg";
 import mainImg2x from "../../images/jpeg/main2x.jpg";
 
 import css from "./Main.module.css";
 
-const Main = ({ scrollToSection }) => {
+const Main = ({ scrollToSection, mainSectionRef }) => {
   const { isMobile } = useContext(ContextDevise);
 
   return (
-    <section className={css.container} id="main">
+    <section className={css.container} id="main" ref={mainSectionRef}>
       <div className={css.wrapper}>
         <h1 className={css.title}>RENEWABLE ENERGY For any task</h1>
         <div className={css.contentWrapper}>
