@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { toast } from "react-toastify";
+
 import LearnMoreBtn from "../../shared/components/Buttons/LearnMoreBtn/LearnMoreBtn";
 
 import css from "./Form.module.css";
@@ -27,17 +29,25 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setIsValid((prevIsValid) => ({
-      ...prevIsValid,
+    const updatedIsValid = {
       name: /^[a-zA-Z]+(?:[' -][a-zA-Z]+)*$/.test(formData.name),
       email: /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/.test(
         formData.email
       ),
-      phone: /^[0-9]*$/.test(formData.phone),
-    }));
+      phone: /^[0-9]{12,}$/.test(formData.phone),
+    };
 
-    if (!isValidForm()) {
-      console.log("Form validation failed. Please correct errors.");
+    setIsValid(updatedIsValid);
+
+    if (!isValidForm(updatedIsValid)) {
+      toast.error("Please fill out the form correctly.", {
+        style: {
+          background: "#d28b8b",
+          color: "#173d33",
+          borderRadius: "50px",
+        },
+      });
+
       return;
     }
 
@@ -48,7 +58,9 @@ const Form = () => {
       message: "",
     });
 
-    console.log("Form submitted successfully!");
+    toast.success("🦄 Form submitted successfully!", {
+      style: { background: "#97d28b", color: "#173d33", borderRadius: "50px" },
+    });
   };
 
   const handleChange = (e) => {
@@ -63,10 +75,7 @@ const Form = () => {
       case "name":
         setIsValid((prevIsValid) => ({
           ...prevIsValid,
-          [name]:
-            /^[a-zA-Zа-яА-Я]+(?:[' -][a-zA-Zа-яА-Я]+)*( [a-zA-Zа-яА-Я]+(?:[' -][a-zA-Zа-яА-Я]+)*){1}$/.test(
-              value
-            ),
+          [name]: /^[a-zA-Z]+(?:[' -][a-zA-Z]+)*$/.test(value),
         }));
         break;
       case "email":
@@ -86,8 +95,8 @@ const Form = () => {
     }
   };
 
-  const isValidForm = () => {
-    return Object.values(isValid).every((fieldIsValid) => fieldIsValid);
+  const isValidForm = (validationState) => {
+    return Object.values(validationState).every((fieldIsValid) => fieldIsValid);
   };
 
   return (

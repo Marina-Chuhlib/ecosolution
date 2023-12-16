@@ -118,13 +118,21 @@ const Slider = () => {
       </div>
 
       <div className={css.btnContainer}>
-        <RoundBtn onClick={handlePrevSlide} customStyles={css.customBtn}>
+        <RoundBtn
+          onClick={handlePrevSlide}
+          customStyles={css.customBtn}
+          aria-label="Previous Slide"
+        >
           <SliderBtn
             style={{ transform: "rotate(180deg)" }}
             className={css.icon}
           />
         </RoundBtn>
-        <RoundBtn onClick={handleNextSlide} customStyles={css.customBtn}>
+        <RoundBtn
+          onClick={handleNextSlide}
+          customStyles={css.customBtn}
+          aria-label="Next Slide"
+        >
           <SliderBtn className={css.icon} />
         </RoundBtn>
       </div>

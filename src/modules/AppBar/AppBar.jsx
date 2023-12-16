@@ -65,7 +65,7 @@ const AppBar = ({ scrollToSection }) => {
         {isHovered ? <Logo2 /> : <Logo1 />}
       </a>
       <div className={css.btnContainer}>
-        <BurgerBtn propIsModalOpen={openModal} />
+        <BurgerBtn propIsModalOpen={openModal} ariaLabel="Open menu" />
         {!isMobile && (
           <div className={css.getInBtn}>
             <GetInBtn onClick={scrollToSection}>Get in touch</GetInBtn>

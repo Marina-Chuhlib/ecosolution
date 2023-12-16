@@ -2,8 +2,6 @@ import { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { ContextDevise } from "../../shared/components/Context/DeviseContext";
 
-import RoundBtn from "../../shared/components/Buttons/RoundBtn/RoundBtn";
-
 import { ReactComponent as Logo1 } from "../../images/svg/logo1.svg";
 import { ReactComponent as Logo2 } from "../../images/svg/logo2.svg";
 import { ReactComponent as BtnIcon } from "../../images/svg/arrowR.svg";
@@ -36,10 +34,24 @@ const Footer = ({ scrollToSection, mainSectionRef }) => {
 
         {!isMobile && (
           <div className={css.socialWrapper}>
-            <a href="#" className={css.socialLink}>
+            <a
+              href="#"
+              className={css.socialLink}
+              aria-label="Visit our Facebook page"
+              title="Visit our Facebook page"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Fb className={css.iconSocial} />
             </a>
-            <a href="#" className={css.socialLink}>
+            <a
+              href="#"
+              className={css.socialLink}
+              aria-label="Visit our Instagram profile"
+              title="Visit our Instagram profile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Inst className={css.iconSocial} />
             </a>
           </div>
@@ -52,27 +64,35 @@ const Footer = ({ scrollToSection, mainSectionRef }) => {
             scrollToSection(mainSectionRef);
           }}
           className={css.customBtn}
+          aria-label="Go to Main"
         >
           <BtnIcon
             style={{ transform: "rotate(270deg)" }}
             className={css.customBtnIcon}
           />
         </a>
-
-        {/* <RoundBtn customStyles={css.customBtn} onClick={scrollToSection}>
-          <BtnIcon
-            style={{ transform: "rotate(270deg)" }}
-            className={css.customBtnIcon}
-          />
-        </RoundBtn> */}
       </div>
 
       {isMobile && (
         <div className={css.socialWrapper}>
-          <a href="" className={css.socialLink}>
+          <a
+            href="#"
+            className={css.socialLink}
+            aria-label="Visit our Facebook page"
+            title="Visit our Facebook page"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Fb className={css.iconSocial} />
           </a>
-          <a href="" className={css.socialLink}>
+          <a
+            href="#"
+            className={css.socialLink}
+            aria-label="Visit our Instagram profile"
+            title="Visit our Instagram profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Inst className={css.iconSocial} />
           </a>
         </div>

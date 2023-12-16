@@ -13,6 +13,8 @@ import img5_2x from "../../../images/jpeg/img5-2x.jpeg";
 
 import css from "./slides.module.css";
 
+const ariaLabel = "More information"
+  
 const slides = [
   {
     content: (
@@ -34,7 +36,10 @@ const slides = [
               <p className={css.caption}>
                 Lviv Region, Radekhiv town Private Enterprise “ZAKHIDNYI BUH”
               </p>
-              <RoundBtn customStyles={css.itemBtn}>
+              <RoundBtn
+                customStyles={css.itemBtn}
+                aria-label={ariaLabel}
+              >
                 <Btn className={css.itemIcon} />
               </RoundBtn>
             </li>
@@ -67,7 +72,10 @@ const slides = [
               <p className={css.caption}>
                 Zhytomyr city Private Enterprise “Bosch”
               </p>
-              <RoundBtn customStyles={css.itemBtn}>
+              <RoundBtn
+                customStyles={css.itemBtn}
+                aria-label={ariaLabel}
+              >
                 <Btn className={css.itemIcon} />
               </RoundBtn>
             </li>
@@ -100,7 +108,10 @@ const slides = [
               <p className={css.caption}>
                 Rivne city Private Enterprise “Biotech”
               </p>
-              <RoundBtn customStyles={css.itemBtn}>
+              <RoundBtn
+                customStyles={css.itemBtn}
+                aria-label={ariaLabel}
+              >
                 <Btn className={css.itemIcon} />
               </RoundBtn>
             </li>
@@ -133,7 +144,10 @@ const slides = [
               <p className={css.caption}>
                 Kherson city Private Enterprise “HealthyFarm”
               </p>
-              <RoundBtn customStyles={css.itemBtn}>
+              <RoundBtn
+                customStyles={css.itemBtn}
+                aria-label={ariaLabel}
+              >
                 <Btn className={css.itemIcon} />
               </RoundBtn>
             </li>
@@ -166,7 +180,10 @@ const slides = [
               <p className={css.caption}>
                 Zaporizhia city Private Enterprise “Biotech”
               </p>
-              <RoundBtn customStyles={css.itemBtn}>
+              <RoundBtn
+                aria-label={ariaLabel}
+                customStyles={css.itemBtn}
+              >
                 <Btn className={css.itemIcon} />
               </RoundBtn>
             </li>

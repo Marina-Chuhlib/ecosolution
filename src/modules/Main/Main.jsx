@@ -45,6 +45,7 @@ const Main = ({ scrollToSection, mainSectionRef }) => {
             alt="Wind generator"
             width="1240"
             height="524"
+            sizes="(min-width: 601px) 50vw, 100vw"
           />
         </picture>
       </div>

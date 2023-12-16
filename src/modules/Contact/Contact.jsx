@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 import Form from "../Form/Form";
 
@@ -54,10 +54,24 @@ const Contact = ({ contactSectionRef }) => {
             <li className={css.item}>
               Social Networks:
               <div className={css.socialWrapper}>
-                <a href="" className={css.socialLink}>
+                <a
+                  href=""
+                  className={css.socialLink}
+                  aria-label="Visit our Facebook page"
+                  title="Visit our Facebook page"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Fb className={css.iconSocial} />
                 </a>
-                <a href="" className={css.socialLink}>
+                <a
+                  href=""
+                  className={css.socialLink}
+                  aria-label="Visit our Instagram profile"
+                  title="Visit our Instagram profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Inst className={css.iconSocial} />
                 </a>
               </div>

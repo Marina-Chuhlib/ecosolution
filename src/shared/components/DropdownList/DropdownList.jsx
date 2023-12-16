@@ -9,7 +9,12 @@ const DropdownList = ({ title, children, isOpen, toggleDropdown }) => {
   return (
     <div className={css.dropdownItem}>
       <div className={css.titleWrapper}>
-        <button type="button" className={css.btn} onClick={toggleDropdown}>
+        <button
+          type="button"
+          className={css.btn}
+          onClick={toggleDropdown}
+          aria-label={isOpen ? "Hide Content" : "Show Content"}
+        >
           {isOpen ? (
             <HideIcon className={css.hideIcon} />
           ) : (

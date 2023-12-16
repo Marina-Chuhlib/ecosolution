@@ -124,6 +124,10 @@ const NavBar = ({ closeModal }) => {
               className={css.socialLink}
               onMouseEnter={() => handleMouseEnter(0)}
               onMouseLeave={handleMouseLeave}
+              aria-label="Visit our Facebook page"
+              title="Visit our Facebook page"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {isHovered === 0 ? (
                 <FaceBH className={css.socialIcon} />
@@ -138,6 +142,10 @@ const NavBar = ({ closeModal }) => {
               className={css.socialLink}
               onMouseEnter={() => handleMouseEnter(1)}
               onMouseLeave={handleMouseLeave}
+              aria-label="Visit our Instagram profile"
+              title="Visit our Instagram profile"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {isHovered === 1 ? (
                 <InstH className={css.socialIcon} />
