@@ -19,6 +19,10 @@
   justify-content: center;
 }
 
+.btn:focus {
+  outline: 2px solid #97d28b;
+}
+
 .title {
   width: 296px;
   font-family: "Fira Sans";
@@ -27,6 +31,7 @@
   line-height: 22px;
   letter-spacing: -0.04em;
   color: #173d33;
+  cursor: pointer;
 }
 
 .content {

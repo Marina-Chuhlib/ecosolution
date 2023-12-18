@@ -51,6 +51,8 @@ const Form = () => {
       return;
     }
 
+    localStorage.setItem("user", JSON.stringify(formData));
+
     setFormData({
       name: "",
       email: "",

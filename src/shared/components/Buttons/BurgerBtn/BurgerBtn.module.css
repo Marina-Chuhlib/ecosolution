@@ -10,6 +10,11 @@
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
   background-color: #97d28b;
+}
+
+.btn:focus {
+  outline: none;
 }

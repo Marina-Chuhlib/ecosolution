@@ -16,6 +16,7 @@ import css from "./AppBar.module.css";
 
 const AppBar = ({ scrollToSection }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   const { isMobile } = useContext(ContextDevise);
   const [isModalOpen, setModalOpen] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
@@ -46,6 +47,14 @@ const AppBar = ({ scrollToSection }) => {
     setIsHovered(false);
   };
 
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
+
   const openModal = () => {
     setModalOpen(true);
   };
@@ -61,8 +70,10 @@ const AppBar = ({ scrollToSection }) => {
         className={css.logoContainer}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
       >
-        {isHovered ? <Logo2 /> : <Logo1 />}
+        {isHovered || isFocused ? <Logo2 /> : <Logo1 />}
       </a>
       <div className={css.btnContainer}>
         <BurgerBtn propIsModalOpen={openModal} ariaLabel="Open menu" />

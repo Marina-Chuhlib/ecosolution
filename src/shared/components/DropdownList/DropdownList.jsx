@@ -21,7 +21,9 @@ const DropdownList = ({ title, children, isOpen, toggleDropdown }) => {
             <AddIcon className={css.showIcon} />
           )}
         </button>
-        <h3 className={css.title}>{title}</h3>
+        <h3 className={css.title} onClick={toggleDropdown}>
+          {title}
+        </h3>
       </div>
 
       {isOpen && <p className={css.content}>{children}</p>}

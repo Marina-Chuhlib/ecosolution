@@ -30,6 +30,10 @@
   background-color: #173d33;
 }
 
+.customBtn:focus {
+  outline: none;
+}
+
 .customBtn {
   width: 32px;
   height: 32px;
@@ -65,7 +69,8 @@
   margin-bottom: 16px;
 }
 
-.link {
+.link,
+.address {
   color: #173d33;
 }
 
@@ -87,7 +92,8 @@
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
-.socialLink:hover .iconSocial path {
+.socialLink:hover .iconSocial path,
+.socialLink:focus .iconSocial path {
   stroke: #97d28b;
 }
 

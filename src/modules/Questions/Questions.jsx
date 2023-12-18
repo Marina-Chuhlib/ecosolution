@@ -16,6 +16,8 @@ const Questions = ({ scrollToSection }) => {
 
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? -1 : index);
+
+    console.log("hi");
   };
 
   const { questionsData } = data;

@@ -39,6 +39,7 @@
 
 .link {
   display: flex;
+  width: fit-content;
   align-items: center;
   gap: 8px;
   color: #173d33;
@@ -52,6 +53,10 @@
 
 .link:hover .iconLink path,
 .address:hover .iconLink path {
+  stroke: #97d28b;
+}
+.link:focus .iconLink path,
+.address:focus .iconLink path {
   stroke: #97d28b;
 }
 
@@ -86,7 +91,8 @@
   stroke: #173d33;
 }
 
-.socialLink:hover .iconSocial path {
+.socialLink:hover .iconSocial path,
+.socialLink:focus .iconSocial path {
   stroke: #97d28b;
 }
 

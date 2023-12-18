@@ -1,6 +1,4 @@
 .container {
-  height: fit-content;
-
   margin-top: 36px;
 }
 
@@ -51,16 +49,15 @@
   .wrapper {
     display: flex;
     justify-content: space-between;
+    height: fit-content;
   }
+
   .list {
     margin-bottom: 0;
+    height: 699px;
   }
 
   .titleWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
     margin-left: 24px;
   }
 
@@ -69,6 +66,8 @@
     font-size: 36px;
     line-height: 36px;
     margin-bottom: 0;
+
+    margin-bottom: 561px;
   }
 
   .infoContainer {
@@ -95,6 +94,7 @@
 
   .list {
     width: 596px;
+    height: 745px;
   }
 
   .title {
@@ -104,6 +104,8 @@
     line-height: 48px;
     text-transform: uppercase;
     color: #173d33;
+
+    margin-bottom: 570px;
   }
 
   .infoContainer {

@@ -26,9 +26,15 @@ const Main = ({ scrollToSection, mainSectionRef }) => {
         </div>
       </div>
       <address className={css.addressWrapper}>
-        <p className={css.address}>
+        <a
+          className={css.address}
+          title="Google Maps"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://maps.app.goo.gl/sSrphhDReJyqCXAg6"
+        >
           79005, Ukraine, Lvivstreet. Shota Rustaveli, 7
-        </p>
+        </a>
         <div className={css.addressLink}>
           <a href="mailto:office@ecosolution.com" className={css.link}>
             office@ecosolution.com

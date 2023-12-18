@@ -43,6 +43,10 @@ a {
   text-decoration: none;
 }
 
+a:focus {
+  outline: 2px solid #97d28b;
+}
+
 h1,
 h2,
 h3,

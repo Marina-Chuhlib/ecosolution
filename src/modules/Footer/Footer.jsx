@@ -12,6 +12,7 @@ import css from "./Footer.module.css";
 
 const Footer = ({ scrollToSection, mainSectionRef }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   const { isMobile } = useContext(ContextDevise);
 
   const handleMouseEnter = () => {
@@ -21,6 +22,15 @@ const Footer = ({ scrollToSection, mainSectionRef }) => {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
+
   return (
     <div className={css.container}>
       <div className={css.logoContainer}>
@@ -28,8 +38,10 @@ const Footer = ({ scrollToSection, mainSectionRef }) => {
           href="#"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
         >
-          {isHovered ? <Logo2 /> : <Logo1 />}
+          {isHovered || isFocused ? <Logo2 /> : <Logo1 />}
         </a>
 
         {!isMobile && (
@@ -100,9 +112,15 @@ const Footer = ({ scrollToSection, mainSectionRef }) => {
       <address>
         <ul className={css.list}>
           <li className={css.item}>
-            <p className={css.address}>
+            <a
+              className={css.address}
+              title="Google Maps"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://maps.app.goo.gl/sSrphhDReJyqCXAg6"
+            >
               79005, Ukraine, Lviv, street. Shota Rustaveli, 7
-            </p>
+            </a>
           </li>
           <li className={css.item}>
             <a href="mailto:office@ecosolution.com" className={css.link}>

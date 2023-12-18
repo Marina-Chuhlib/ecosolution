@@ -52,7 +52,7 @@
 
 .fieldValue:focus {
   background-color: transparent;
-  outline: none;
+  outline: 2px solid #97d28b;
 }
 
 .fieldValue::placeholder {
